@@ -1,0 +1,25 @@
+\RequiresPackage{tcolorbox}
+\RequiresPackage{amssymb}
+\RequiresPackage{amsmath}
+\RequiresPackage{amsthm}
+\RequiresPackage{amsfonts}
+
+\ProvidesPackage{structure}
+
+% ---- color output ----
+
+% the below template for solutions is taken from https://www.overleaf.com/project/672fd8d7894e87c1250f3a0d
+\newtcbtheorem[]{solution}{Solution}{
+  enhanced,
+  colback=black15,
+  colbacktitle=black15,
+  coltitle=black,
+  boxrule=0pt,
+  frame hidden,
+  borederline west = {0.5mm}{0.0mm}{black},
+  fonttitle=\bfseries\sffamily,
+  breakable,
+  before skip=3ex,
+  after skip=3ex}{solution}
+
+% ---- black/white output ----
