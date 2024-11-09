@@ -1,25 +1,82 @@
-\RequiresPackage{tcolorbox}
-\RequiresPackage{amssymb}
-\RequiresPackage{amsmath}
-\RequiresPackage{amsthm}
-\RequiresPackage{amsfonts}
-
 \ProvidesPackage{structure}
 
-% ---- color output ----
+\RequirePackage{tcolorbox}
+\RequirePackage{amssymb}
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
+\RequirePackage{amsfonts}
+\RequirePackage[dvipsnames]{xcolor}
+\RequirePackage{mdframed}[framemethod=default]
+\RequirePackage{tikz}
 
-% the below template for solutions is taken from https://www.overleaf.com/project/672fd8d7894e87c1250f3a0d
-\newtcbtheorem[]{solution}{Solution}{
-  enhanced,
-  colback=black15,
-  colbacktitle=black15,
-  coltitle=black,
-  boxrule=0pt,
-  frame hidden,
-  borederline west = {0.5mm}{0.0mm}{black},
-  fonttitle=\bfseries\sffamily,
-  breakable,
-  before skip=3ex,
-  after skip=3ex}{solution}
+% ---- minimal ----
 
-% ---- black/white output ----
+\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+
+% taken from mdframed documentation example 6
+\newenvironment{basicBoxMin}[2][]{
+  \ifstrempty{#1}{
+    \mdfsetup{
+      frametitle={
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=blue!20]
+             {\strut #2};}}
+  }
+             {\mdfsetup{
+      frametitle={
+        \tikz[baseline=(current bounding box.east),outer sep=0pt]
+        \node[anchor=east,rectangle,fill=blue!20]
+             {\strut #2:~#1};}}
+  }
+  \mdfsetup{innertopmargin=10pt,linecolor=blue!20,
+    linewidth=2pt,topline=true,
+    frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
+  \begin{mdframed}[]\relax
+}{\end{mdframed}}
+
+
+
+% ---- pretty ----
+
+% the below template for boxes is taken from Neil's tex stuff
+\newtcolorbox[auto counter,number within=chapter]{basicBoxPretty}[4][]{
+	colback=#4!5!white,
+	colframe=#4!75!black,
+	%colupper=#4!50!black,
+	fonttitle=\bfseries,
+	rounded corners = all,
+	title=#2 \thetcbcounter: #3,
+	#1
+}
+
+% ---- specific environments ----
+
+
+
+\newenvironment{boxDefinition}[2][]
+{ \begin{basicBox}[#1]{Definition}{#2}{ProcessBlue}}
+{ \end{basicBox} }
+
+\newenvironment{boxNote}[2][]
+{ \begin{basicBox}[#1]{Note}{#2}{gray}}
+{ \end{basicBox} }
+
+\newenvironment{boxProblem}[2][]
+{ \begin{basicBox}[#1]{Problem}{#2}{Emerald}}
+{ \end{basicBox} }
+
+\newenvironment{boxTheorem}[2][]
+{ \begin{basicBox}[#1]{Theorem}{#2}{YellowOrange}}
+{ \end{basicBox} }
+
+\newenvironment{boxExample}[2][]
+{ \begin{basicBox}[#1]{Example}{#2}{Red}}
+{ \end{basicBox} }
+
+\newenvironment{boxTODO}[2][]
+{ \begin{basicBox}[#1]{TODO}{#2}{Rhodamine}}
+{ \end{basicBox} }
+
+\newenvironment{boxQuote}[2][]
+{ \begin{basicBox}[#1]{Quote}{#2}{Purple}}
+{ \end{basicBox} }

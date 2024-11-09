@@ -24,6 +24,8 @@ i do enjoy this structure, but it is designed mostly for homeworks.
 
 - 10pt font
 
+- need to fix counter for minimal things
+
 ## structure
 
 for notes it seems prudent to use the "article" class, while for assignments i will use the "assignments" class.
