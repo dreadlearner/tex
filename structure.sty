@@ -1,4 +1,8 @@
 \ProvidesPackage{structure}
+\newif\ifstructure@minimal
+\DeclareOption{minimal=true}{\structure@minimaltrue}
+\DeclareOption{minimal=false}{\structure@minimalfalse}
+\ProcessOptions\relax
 
 \RequirePackage{tcolorbox}
 \RequirePackage{amssymb}
@@ -9,26 +13,35 @@
 \RequirePackage{mdframed}[framemethod=default]
 \RequirePackage{tikz}
 
+\ifstructure@minimal
+\newenvironment{basicBox}[4][]
+               { \begin{basicBoxMin}[#1]{#2}{#3}{#4}}
+               { \end{basicBoxMin}}
+               \else
+               \newenvironment{basicBox}[4][]
+                              { \begin{basicBoxPretty}[#1]{#2}{#3}{#4}}
+                              { \end{basicBoxPretty}}
+                              \fi
 % ---- minimal ----
 
 \mdfsetup{skipabove=\topskip,skipbelow=\topskip}
 
 % taken from mdframed documentation example 6
-\newenvironment{basicBoxMin}[2][]{
-  \ifstrempty{#1}{
+\newenvironment{basicBoxMin}[4][]{
+  \ifstrempty{#3}{
     \mdfsetup{
       frametitle={
         \tikz[baseline=(current bounding box.east),outer sep=0pt]
-        \node[anchor=east,rectangle,fill=blue!20]
+        \node[anchor=east,rectangle,fill=#4!20]
              {\strut #2};}}
   }
              {\mdfsetup{
       frametitle={
         \tikz[baseline=(current bounding box.east),outer sep=0pt]
-        \node[anchor=east,rectangle,fill=blue!20]
-             {\strut #2:~#1};}}
+        \node[anchor=east,rectangle,fill=#4!20]
+             {\strut #2:~#3};}}
   }
-  \mdfsetup{innertopmargin=10pt,linecolor=blue!20,
+  \mdfsetup{innertopmargin=10pt,linecolor=#4!20,
     linewidth=2pt,topline=true,
     frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
   \begin{mdframed}[]\relax
@@ -38,7 +51,7 @@
 
 % ---- pretty ----
 
-% the below template for boxes is taken from Neil's tex stuff
+% taken from Neil's tex stuff
 \newtcolorbox[auto counter,number within=chapter]{basicBoxPretty}[4][]{
 	colback=#4!5!white,
 	colframe=#4!75!black,
@@ -51,32 +64,30 @@
 
 % ---- specific environments ----
 
-
-
 \newenvironment{boxDefinition}[2][]
-{ \begin{basicBox}[#1]{Definition}{#2}{ProcessBlue}}
-{ \end{basicBox} }
+               { \begin{basicBox}[#1]{Definition}{#2}{ProcessBlue}}
+               { \end{basicBox} }
 
 \newenvironment{boxNote}[2][]
-{ \begin{basicBox}[#1]{Note}{#2}{gray}}
-{ \end{basicBox} }
+               { \begin{basicBox}[#1]{Note}{#2}{gray}}
+               { \end{basicBox} }
 
 \newenvironment{boxProblem}[2][]
-{ \begin{basicBox}[#1]{Problem}{#2}{Emerald}}
-{ \end{basicBox} }
+               { \begin{basicBox}[#1]{Problem}{#2}{Emerald}}
+               { \end{basicBox} }
 
 \newenvironment{boxTheorem}[2][]
-{ \begin{basicBox}[#1]{Theorem}{#2}{YellowOrange}}
-{ \end{basicBox} }
+               { \begin{basicBox}[#1]{Theorem}{#2}{YellowOrange}}
+               { \end{basicBox} }
 
 \newenvironment{boxExample}[2][]
-{ \begin{basicBox}[#1]{Example}{#2}{Red}}
-{ \end{basicBox} }
+               { \begin{basicBox}[#1]{Example}{#2}{Red}}
+               { \end{basicBox} }
 
 \newenvironment{boxTODO}[2][]
-{ \begin{basicBox}[#1]{TODO}{#2}{Rhodamine}}
-{ \end{basicBox} }
+               { \begin{basicBox}[#1]{TODO}{#2}{Rhodamine}}
+               { \end{basicBox} }
 
 \newenvironment{boxQuote}[2][]
-{ \begin{basicBox}[#1]{Quote}{#2}{Purple}}
-{ \end{basicBox} }
+               { \begin{basicBox}[#1]{Quote}{#2}{Purple}}
+               { \end{basicBox} }

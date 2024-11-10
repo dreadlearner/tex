@@ -24,7 +24,7 @@ i do enjoy this structure, but it is designed mostly for homeworks.
 
 - 10pt font
 
-- need to fix counter for minimal things
+- need to fix counter for minimal formatting
 
 ## structure
 
