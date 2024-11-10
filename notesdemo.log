@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  9 NOV 2024 22:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  10 NOV 2024 01:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -983,10 +983,11 @@ File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
 \c@mdf@zref@counter=\count365
 Package zref Info: New property: mdf@pagevalue on input line 895.
 )
-\c@tcb@cnt@basicBoxMin=\count366
-\c@tcb@cnt@basicBoxPretty=\count367
+\c@boxcounter=\count366
+\c@tcb@cnt@basicBoxMin=\count367
+\c@tcb@cnt@basicBoxPretty=\count368
 )
-No file notesdemo.aux.
+(./notesdemo.aux)
 \openout1 = `notesdemo.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
@@ -1003,6 +1004,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -1039,16 +1041,16 @@ LaTeX Font Info:    ... okay on input line 11.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count368
+\scratchcounter=\count369
 \scratchdimen=\dimen312
 \scratchbox=\box86
-\nofMPsegments=\count369
-\nofMParguments=\count370
+\nofMPsegments=\count370
+\nofMParguments=\count371
 \everyMPshowfont=\toks51
-\MPscratchCnt=\count371
+\MPscratchCnt=\count372
 \MPscratchDim=\dimen313
-\MPnumerator=\count372
-\makeMPintoPDFobject=\count373
+\MPnumerator=\count373
+\makeMPintoPDFobject=\count374
 \everyMPtoPDFconversion=\toks52
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1077,11 +1079,6 @@ Package mdframed Info: mdframed detected package amsthm
 (mdframed)              on input line 31.
 
 
-LaTeX Warning: Reference `mdf@pagelabel-1' on page 1 undefined on input line 31
-.
-
-
-
 [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
@@ -1090,28 +1087,21 @@ LaTeX Warning: Reference `mdf@pagelabel-1' on page 1 undefined on input line 31
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 22464 strings out of 475030
- 453153 string characters out of 5763462
- 1951957 words of memory out of 5000000
- 44794 multiletter control sequences out of 15000+600000
+ 22422 strings out of 475030
+ 452310 string characters out of 5763462
+ 1939957 words of memory out of 5000000
+ 44750 multiletter control sequences out of 15000+600000
  566451 words of font info for 69 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
- 131i,11n,135p,498b,1243s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 131i,11n,135p,498b,622s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pf
 b></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></
 usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on notesdemo.pdf (1 page, 57565 bytes).
+Output written on notesdemo.pdf (1 page, 57373 bytes).
 PDF statistics:
  36 PDF objects out of 1000 (max. 8388607)
  22 compressed objects within 1 object stream
