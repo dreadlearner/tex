@@ -5,8 +5,8 @@ this repository contains files that I use to ensure consistent structure across 
 in particular, it does some nice things for me:
 
 - it's easy for me to move between two important categories of tex documents:
-1. minimalist black and white documents for printing
-2. colorful documents for sharing digitally
+       1. minimalist black and white documents for printing
+       2. colorful documents for sharing digitally
 
 - i'm able to keep a consistent set of macros and environments across all my projects
 
