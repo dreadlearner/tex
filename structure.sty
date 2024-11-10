@@ -5,6 +5,7 @@
 \ProcessOptions\relax
 
 \RequirePackage{tcolorbox}
+\tcbuselibrary{skins}
 \RequirePackage{amssymb}
 \RequirePackage{amsmath}
 \RequirePackage{amsthm}
@@ -22,49 +23,40 @@
                               { \begin{basicBoxPretty}[#1]{#2}{#3}{#4}}
                               { \end{basicBoxPretty}}
                               \fi
+
 % ---- minimal ----
 
-\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
-
-% taken from mdframed documentation example 6
-\newenvironment{basicBoxMin}[4][]{
-  \ifstrempty{#3}{
-    \mdfsetup{
-      frametitle={
-        \tikz[baseline=(current bounding box.east),outer sep=0pt]
-        \node[anchor=east,rectangle,fill=#4!20]
-             {\strut #2};}}
-  }
-             {\mdfsetup{
-      frametitle={
-        \tikz[baseline=(current bounding box.east),outer sep=0pt]
-        \node[anchor=east,rectangle,fill=#4!20]
-             {\strut #2:~#3};}}
-  }
-  \mdfsetup{innertopmargin=10pt,linecolor=#4!20,
-    linewidth=2pt,topline=true,
-    frametitleaboveskip=\dimexpr-\ht\strutbox\relax,}
-  \begin{mdframed}[]\relax
-}{\end{mdframed}}
-
-
+\newtcolorbox[auto counter, number within=section]{basicBoxMin}[4][]{
+  colback=white,
+  colframe=gray!20,
+  coltitle=black,
+  colbacktitle=gray!20,
+  attach boxed title to top left={yshift=-3mm,xshift=5mm},
+  boxed title style={sharp corners=all, width=2mm, height=6mm, valign=center},
+  fonttitle=\bfseries,
+  top=5mm,
+  enhanced,
+  sharp corners=all,
+  title=#2 \thetcbcounter: #3,
+  #1
+}
 
 % ---- pretty ----
 
 % taken from Neil's tex stuff
-\newtcolorbox[auto counter,number within=chapter]{basicBoxPretty}[4][]{
-	colback=#4!5!white,
-	colframe=#4!75!black,
-	%colupper=#4!50!black,
-	fonttitle=\bfseries,
-	rounded corners = all,
-	title=#2 \thetcbcounter: #3,
-	#1
+\newtcolorbox[auto counter,number within=section]{basicBoxPretty}[4][]{
+  colback=#4!5!white,
+  colframe=#4!75!black,
+  %colupper=#4!50!black,
+  fonttitle=\bfseries,
+  rounded corners = all,
+  title=#2 \thetcbcounter: #3,
+  #1
 }
 
 % ---- specific environments ----
 
-\newenvironment{boxDefinition}[2][]
+\newenvironment{boxDef}[2][]
                { \begin{basicBox}[#1]{Definition}{#2}{ProcessBlue}}
                { \end{basicBox} }
 
@@ -72,22 +64,32 @@
                { \begin{basicBox}[#1]{Note}{#2}{gray}}
                { \end{basicBox} }
 
-\newenvironment{boxProblem}[2][]
+\newenvironment{boxProb}[2][]
                { \begin{basicBox}[#1]{Problem}{#2}{Emerald}}
                { \end{basicBox} }
 
-\newenvironment{boxTheorem}[2][]
-               { \begin{basicBox}[#1]{Theorem}{#2}{YellowOrange}}
+\newenvironment{boxThm}[2][]
+               { \begin{basicBox}[#1]{Theorem}{#2}{BurntOrange}}
                { \end{basicBox} }
 
-\newenvironment{boxExample}[2][]
+\newenvironment{boxLemma}[2][]
+               { \begin{basicBox}[#1]{Lemma}{#2}{YellowOrange}}
+               { \end{basicBox} }
+
+\newenvironment{boxProp}[2][]
+               { \begin{basicBox}[#1]{Proposition}{#2}{YellowOrange}}
+               { \end{basicBox} }
+
+\newenvironment{boxCor}[2][]
+               { \begin{basicBox}[#1]{Corollary}{#2}{YellowOrange}}
+               { \end{basicBox} }
+
+\newenvironment{boxEx}[2][]
                { \begin{basicBox}[#1]{Example}{#2}{Red}}
-               { \end{basicBox} }
-
-\newenvironment{boxTODO}[2][]
-               { \begin{basicBox}[#1]{TODO}{#2}{Rhodamine}}
                { \end{basicBox} }
 
 \newenvironment{boxQuote}[2][]
                { \begin{basicBox}[#1]{Quote}{#2}{Purple}}
                { \end{basicBox} }
+
+\newcommand{\todo}[1]{\begin{mdframed}\textbf{TODO:} #1\end{mdframed}}

@@ -28,7 +28,7 @@ i do enjoy this structure, but it is designed mostly for homeworks.
 
 ## structure
 
-for notes it seems prudent to use the "article" class, while for assignments i will use the "assignments" class.
+i've been using the exam class for homeworks, and i will use memoir for notes.
 
 ## rebecca turner stuff to take
 
