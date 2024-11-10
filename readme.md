@@ -1,11 +1,14 @@
 # connor's tex stuff
 
-this repository will be used to design some consistent structure for my tex documents.
+this repository contains files that I use to ensure consistent structure across my tex documents.
 
-## notes
-the current structure of my tex docs is given in "preamble.tex"
+in particular, it does some nice things for me:
 
-i do enjoy this structure, but it is designed mostly for homeworks.
+- i'm able to move between "minimal" (low ink, black and white) tex documents for printing and colorful, pretty tex documents for viewing digitally.
+
+- i'm able to keep a consistent set of macros and environments across all my projects
+
+- i'm able to easily move __all__ of my quality of life stuff from one class to another using a simple `git clone`.
 
 ## ideas
 - minimal vs pretty formatting for ink usage
