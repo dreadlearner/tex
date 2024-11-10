@@ -22,4 +22,6 @@ in particular, it does some nice things for me:
 
 - ToC
 
-- header for class, name, etc.
+- finish singlecounter option so that homeworks can all have one single, simple counter
+
+- fix issue with boxes taking first letter as title

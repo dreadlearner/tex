@@ -1,7 +1,9 @@
 \ProvidesPackage{structure}
 \newif\ifstructure@minimal
+\newif\ifstructure@singlecounter
 \DeclareOption{minimal=true}{\structure@minimaltrue}
 \DeclareOption{minimal=false}{\structure@minimalfalse}
+\DeclareOption{singlecounter}{\structure@singlecountertrue}
 \ProcessOptions\relax
 
 \RequirePackage{tcolorbox}
@@ -93,3 +95,16 @@
                { \end{basicBox} }
 
 \newcommand{\todo}[1]{\begin{mdframed}\textbf{TODO:} #1\end{mdframed}}
+
+\renewcommand\qedsymbol{$\triangle$}
+
+\newcommand\sol[1]{
+  \begin{mdframed}
+    \emph{Solution.} #1
+\end{mdframed}}
+
+\newcommand\solproof[1]{
+  \begin{mdframed}
+    \begin{proof} #1
+    \end{proof}
+\end{mdframed}}
