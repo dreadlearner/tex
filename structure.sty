@@ -16,15 +16,18 @@
 \RequirePackage{mdframed}[framemethod=default]
 \RequirePackage{tikz}
 
+\newcounter{boxcounter}
+\setcounter{boxcounter}{1}
+
 \ifstructure@minimal
+  \newenvironment{basicBox}[4][]
+  { \begin{basicBoxMin}[#1]{#2}{#3}{#4}}
+  { \end{basicBoxMin}}
+\else
 \newenvironment{basicBox}[4][]
-               { \begin{basicBoxMin}[#1]{#2}{#3}{#4}}
-               { \end{basicBoxMin}}
-               \else
-               \newenvironment{basicBox}[4][]
-                              { \begin{basicBoxPretty}[#1]{#2}{#3}{#4}}
-                              { \end{basicBoxPretty}}
-                              \fi
+  { \begin{basicBoxPretty}[#1]{#2}{#3}{#4}}
+  { \end{basicBoxPretty}}
+\fi
 
 % ---- minimal ----
 
@@ -46,7 +49,7 @@
 % ---- pretty ----
 
 % taken from Neil's tex stuff
-\newtcolorbox[auto counter,number within=section]{basicBoxPretty}[4][]{
+\newtcolorbox[auto counter, number within=section]{basicBoxPretty}[4][]{
   colback=#4!5!white,
   colframe=#4!75!black,
   %colupper=#4!50!black,
@@ -68,7 +71,7 @@
 
 \newenvironment{boxProb}[2][]
                { \begin{basicBox}[#1]{Problem}{#2}{Emerald}}
-               { \end{basicBox} }
+               { \end{basicBox}}
 
 \newenvironment{boxThm}[2][]
                { \begin{basicBox}[#1]{Theorem}{#2}{BurntOrange}}
