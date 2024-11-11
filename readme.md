@@ -6,8 +6,8 @@ in particular, it does some nice things for me:
 
 - it's easy for me to move between two important categories of tex documents:
 
-       1. minimalist black and white documents for printing
-       2. colorful documents for sharing digitally
+   1. minimalist black and white documents for printing
+   2. colorful documents for sharing digitally
 
 - i'm able to keep a consistent set of macros and environments across all my projects
 
@@ -19,13 +19,18 @@ each box environment is breakable, but it won't happen automatically. if you wan
 
 `\begin{boxDef}[breakable]{Definition} ....`
 
-this is part of a broader theme which is that the options for any box*** environment just get shot through straight to the tcolorbox options, so you can just throw stuff there to customize the boxes
+this is part of a broader theme which is that the options for any box environment just get shot through straight to the tcolorbox options, so you can just throw stuff there to customize the boxes
 
+if you'd like to see some demo material or use my notes/exercises file, they can be found in `demofiles/`.
 ## todo
 - some way of making TODOs apparent
 
 - ToC
 
-- finish singlecounter option so that homeworks can all have one single, simple counter
+- finish singlecounter option so that homeworks can all have one single, simple counter. this can be done by using the `use counter` option inside our .sty
 
 - fix issue with boxes taking first letter as title
+
+- "UNFINISHED" boxes in header of problems available as package option?
+
+- make the setup process nice: script to put notes and exercises file in the right place, only structure file in this repo, this repo as submodule of each class

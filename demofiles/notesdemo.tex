@@ -1,0 +1,32 @@
+\documentclass[10pt]{memoir}
+\usepackage[top = 2.5cm, bottom = 2.5cm, left = 2.5cm, right = 2.5cm]{geometry} 
+\usepackage[minimal=false]{structure}
+
+\title{\LaTeX \texttt{ structure.sty} Demo}
+\author{Connor Haynes}
+\date{}
+
+%[Options]{#1: tcolorbox options, #2: title}
+
+\begin{document}
+\maketitle
+\begin{boxDef}{\emph{Title}}
+  A definition goes here.
+\end{boxDef}
+\begin{boxNote}{\emph{Title}}
+  A note goes here.
+\end{boxNote}
+\begin{boxProb}{\emph{Title}}
+  A problem goes here.
+\end{boxProb}
+\begin{boxThm}{\emph{Title}}
+  A theorem/proposition/corollary/lemma goes here. There are distinct environments for each, the only difference being the word that comes before the counter.
+\end{boxThm}
+\begin{boxEx}{\emph{Title}}
+  An example goes here.
+\end{boxEx}
+\begin{boxQuote}{\emph{Title}}
+  A quote goes here.
+\end{boxQuote}
+\todo{A todo item goes here.}
+\end{document}
