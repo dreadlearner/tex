@@ -18,6 +18,13 @@
 \RequirePackage{hyperref}
 \RequirePackage{enumitem}
 
+\newcounter{problemcounter}
+\newcommand{\countertype}{auto counter,number within=section}
+
+\ifstructure@singlecounter
+\renewcommand{\countertype}{auto counter}
+\fi
+
 \ifstructure@minimal
 \newenvironment{basicBox}[4][]
                { \begin{basicBoxMin}[#1]{#2}{#3}{#4}}
@@ -30,7 +37,7 @@
 
 % ---- minimal ----
 
-\newtcolorbox[auto counter, number within=section]{basicBoxMin}[4][]{
+\newtcolorbox[\countertype]{basicBoxMin}[4][]{
   hypertarget=box\thetcbcounter,
   colback=white,
   colframe=gray!60,
@@ -49,7 +56,7 @@
 % ---- pretty ----
 
 % taken from Neil's tex stuff
-\newtcolorbox[auto counter,number within=section]{basicBoxPretty}[4][]{
+\newtcolorbox[\countertype]{basicBoxPretty}[4][]{
   hypertarget=box\thetcbcounter,
   colback=#4!5!white,
   colframe=#4!75!black,

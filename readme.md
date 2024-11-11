@@ -27,8 +27,6 @@ if you'd like to see some demo material or use my notes/exercises file, they can
 
 - ToC
 
-- finish singlecounter option so that homeworks can all have one single, simple counter. this can be done by using the `use counter` option inside our .sty
-
 - fix issue with boxes taking first letter as title
 
 - "UNFINISHED" boxes in header of problems available as package option?
