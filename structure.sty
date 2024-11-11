@@ -31,6 +31,7 @@
 % ---- minimal ----
 
 \newtcolorbox[auto counter, number within=section]{basicBoxMin}[4][]{
+  breakable,
   hypertarget=box\thetcbcounter,
   colback=white,
   colframe=gray!60,
@@ -40,7 +41,7 @@
   boxed title style={sharp corners=all, width=2mm, height=6mm, valign=center},
   fonttitle=\bfseries,
   top=5mm,
-  enhanced,
+  enhanced jigsaw,
   sharp corners=all,
   title=#2 \thetcbcounter: #3,
   #1
@@ -50,11 +51,13 @@
 
 % taken from Neil's tex stuff
 \newtcolorbox[auto counter,number within=section]{basicBoxPretty}[4][]{
+  breakable,
   hypertarget=box\thetcbcounter,
   colback=#4!5!white,
   colframe=#4!75!black,
   %colupper=#4!50!black,
   fonttitle=\bfseries,
+  enhanced jigsaw,
   rounded corners = all,
   title=#2 \thetcbcounter: #3,
   #1
