@@ -48,3 +48,5 @@ i'd like to have it so that you can just pass `\unfinished` as the option, but t
 - "UNFINISHED" boxes passed as option to box
 
 - make the setup process nice: script to put notes and exercises file in the right place, only structure file in this repo, this repo as submodule of each class
+
+- the counter is broken right now if you don't pass `singlecounter` as an option to `structure`

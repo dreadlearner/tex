@@ -1,6 +1,6 @@
 \documentclass[10pt]{article}
 \usepackage[top = 2.5cm, bottom = 2.5cm, left = 2.5cm, right = 2.5cm]{geometry} 
-\usepackage[singlecounter,minimal=true]{structure}
+\usepackage[singlecounter,minimal=false]{../structure}
 \usepackage{fancyhdr}
 
 \pagestyle{fancy}
@@ -29,7 +29,7 @@
 
 \vspace{4mm}
 
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.1) Prove or give a counterexample: If $v_1,\dots,v_m\in V$, then
   \[\sum_{j=1}^{m}\sum_{k=1}^{m}\langle v_j,v_k\rangle\geq0.\]
   \solproof{Note that by right and left additivity respectively we find that
@@ -37,7 +37,7 @@
   and because $\sum_{j=1}^{m}v_j=\sum_{k=1}^{m}v_k$ we have that
   \[\sum_{j=1}^{m}\sum_{k=1}^{m}\langle v_j,v_k\rangle=\langle \sum_{j=1}^{m}v_j,\sum_{k=1}^{m}v_k\rangle\geq0.\]}
 \end{boxProb}
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.3)
   \begin{enumerate}
   \item Show that the function taking an ordered pair $((x_1,x_2),(y_1,y_2))$ of elements in $\mathbb{R}^2$ to $|x_1y_1|+|x_2y_2|$ is not an inner product on $\mathbb{R}^2$.
@@ -46,7 +46,7 @@
     \sol{Note that this function does not satisfy that $\langle v,v\rangle=0$ if and only if $v=0$, as $v=(0,1,0)$ satisfies the equality.}
   \end{enumerate}
 \end{boxProb}
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.6) Suppose $u,v\in V$. Prove that $\langle u,v\rangle =0$ if and only if $||u||\leq ||u+av||$ for all $a\in\mathbb{F}$.
   \solproof{First the forward direction. By the fact that norms are positive semidefinite we have that showing $||u||\leq||u+av||$ is equivalent to showing that $||u||^2\leq||u+av||^2$. We may utilize the left and right additivity (and homogeneity) of the inner product to see that
     \[\langle u+av,u+av\rangle=\langle u,u\rangle+\langle u,av\rangle + \langle av,u\rangle + \langle av,av\rangle=\langle u,u\rangle + a^2\langle v,v\rangle=||u||^2+a^2||v||^2.\]
@@ -56,7 +56,7 @@
     \[||u+av||^2=||v||^2+||u||^2+a\langle u,v\rangle + a\langle v,u\rangle>||u||^2.\]
     Therefore the result holds.}
 \end{boxProb}
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.17) Prove that
   \[\left(\sum_{k=1}^{n}a_kb_k\right)^2\leq\left(\sum_{k=1}^{n}ka_k^2\right)\left(\sum_{k=1}^{n}\frac{b_k^2}{k}\right)\]
   for all real numbers $a_1,\dots,a_n$ and $b_1,\dots,b_n$.
@@ -67,7 +67,7 @@
     Therefore
     \[\left(\sum_{k=1}^{n}a_kb_k\right)^2=|\langle u,v\rangle|\leq||u||^2||v||^2\leq\left(\sum_{k=1}^{n}ka_k^2\right)\left(\sum_{k=1}^{n}\frac{b_k^2}{k}\right).\]}
 \end{boxProb}
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.19) Suppose $v_1,\dots,v_n$ is a basis of $V$ and $T\in\mathcal{L}(V)$. Prove that if $\lambda$ is an eigenvalue of $T$, then
   \[|\lambda|^2\leq\sum_{j=1}^{n}\sum_{k=1}^{n}|\mathcal{M}(T)_{j,k}|^2.\]
   \solproof{Suppose $v$ is the eigenvector of $T$ corresponding to $\lambda$. Then $|\lambda|^2||v||^2=||\lambda v||^2=||Tv||^2$. Let $a_j$ denote the $j$-th row of $\mathcal{M}(T)$. Then $||Tv||^2=\sum_{j=1}^{n}|\langle v,a_j\rangle|^2$ and therefore $||Tv||^2\leq\sum_{j=1}^{n}||v||^2||a_j||^2$. Succinctly,
@@ -77,14 +77,14 @@
     where $a_{jk}$ is the $k$-th element of row $j$. Equivalently,
     \[|\lambda|^2\leq\sum_{j=1}^{n}\sum_{k=1}^{n}|\mathcal{M}(T)_{j,k}|^2.\]}
 \end{boxProb}
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.21) Suppose $u,v\in V$ are such that
   \[||u||=3,\quad||u+v||=4,\quad||u-v||=6.\]
   What number does $||v||$ equal?
   \sol{By the parallelogram equality,
     \[16+36=2(9+||v||^2),\quad17=||v||^2,\quad||v||=\sqrt{17}.\]}
 \end{boxProb}
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.22) Show that if $u,v\in V$, then
   \[||u+v||||u-v||\leq ||u||^2+||v||^2.\]
   \solproof{By the parallelogram equality,
@@ -96,7 +96,7 @@
     for both $||u+v||^2$ and $||u-v||^2$. Therefore
     \[||u+v||^2||u-v||^2\leq(||u||^2+||v||^2)^2,\quad||u+v||||u-v||\leq||u||^2+||v||^2.\]}
 \end{boxProb}
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.26) Suppose $V$ is a real inner product space. Prove that
   \[\langle u,v\rangle=\frac{||u+v||^2-||u-v||^2}{4}\]
   for all $u,v\in V$.
@@ -107,7 +107,7 @@
     Therefore
     \[\frac{||u+v||^2-||u-v||^2}{4}=\frac{4\langle u,v\rangle}{4}=\langle u,v\rangle\]}
 \end{boxProb}
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.27) Suppose $V$ is a complex inner product space. Prove that
   \[\langle u,v\rangle=\frac{||u+v||^2-||u-v||^2+||u+iv||^2i-||u-iv||^2i}{4}\]
   for all $u,v\in V$.
@@ -120,7 +120,7 @@
     \[\frac{||u+v||^2-||u-v||^2+||u+iv||^2i-||u-iv||^2i}{4}=\frac{4a+4bi}{4}=a+bi=\langle u,v\rangle.\]}
   
 \end{boxProb}
-\begin{boxProb}
+\begin{boxProb}{}
   (6A.30) Suppose $V$ is a real inner product space. For $u,v,w,x\in V$, define
   \[\langle u+iv,w+ix\rangle_C=\langle u,w\rangle+\langle v,x\rangle+(\langle v,w\rangle-\langle u,x\rangle)i.\]
   \begin{enumerate}

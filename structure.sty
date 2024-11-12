@@ -17,14 +17,14 @@
 \RequirePackage{tikz}
 \RequirePackage{hyperref}
 \RequirePackage{enumitem}
+\RequirePackage{wrapfig}
 
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
-\newcounter{problemcounter}
-\newcommand{\countertype}{auto counter,number within=section}
+\newcommand{\countertype}{\texttt{auto counter,number within=section}}
 
 \ifstructure@singlecounter
-\renewcommand{\countertype}{auto counter}
+\renewcommand{\countertype}{\texttt{auto counter}}
 \fi
 
 \ifstructure@minimal
