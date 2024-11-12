@@ -21,10 +21,12 @@
 
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
-\newcommand{\countertype}{\texttt{auto counter,number within=section}}
+\newcommand{\countertype}{section}
 
 \ifstructure@singlecounter
-\renewcommand{\countertype}{\texttt{auto counter}}
+\newcounter{boxcounter}
+\else
+\newcounter{boxcounter}[section]
 \fi
 
 \ifstructure@minimal
@@ -39,7 +41,7 @@
 
 % ---- minimal ----
 
-\newtcolorbox[\countertype]{basicBoxMin}[4][]{
+\newtcolorbox[use counter=boxcounter]{basicBoxMin}[4][]{
   hypertarget=box\thetcbcounter,
   colback=white,
   colframe=gray!60,
@@ -58,7 +60,7 @@
 % ---- pretty ----
 
 % taken from Neil's tex stuff
-\newtcolorbox[\countertype]{basicBoxPretty}[4][]{
+\newtcolorbox[use counter=boxcounter]{basicBoxPretty}[4][]{
   hypertarget=box\thetcbcounter,
   colback=#4!5!white,
   colframe=#4!75!black,

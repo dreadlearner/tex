@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  12 NOV 2024 01:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.8.5)  12 NOV 2024 11:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -790,9 +790,15 @@ Package: enumitem 2019/06/20 v3.9 Customized lists
 \enit@count@id=\count328
 \enitdp@description=\count329
 )
-\c@problemcounter=\count330
-\c@tcb@cnt@basicBoxMin=\count331
-\c@tcb@cnt@basicBoxPretty=\count332
+(/usr/local/texlive/2024/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen273
+\WF@size=\dimen274
+\c@WF@wrappedlines=\count330
+\WF@box=\box85
+\WF@everypar=\toks47
+Package: wrapfig 2003/01/31  v 3.6
+)
+\c@boxcounter=\count331
 )
 (/usr/local/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2024/07/23 v4.3.1 Extensive control of page headers and foote
@@ -865,17 +871,17 @@ LaTeX Font Info:    ... okay on input line 12.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count333
-\scratchdimen=\dimen273
-\scratchbox=\box85
-\nofMPsegments=\count334
-\nofMParguments=\count335
-\everyMPshowfont=\toks47
-\MPscratchCnt=\count336
-\MPscratchDim=\dimen274
-\MPnumerator=\count337
-\makeMPintoPDFobject=\count338
-\everyMPtoPDFconversion=\toks48
+\scratchcounter=\count332
+\scratchdimen=\dimen275
+\scratchbox=\box86
+\nofMPsegments=\count333
+\nofMParguments=\count334
+\everyMPshowfont=\toks48
+\MPscratchCnt=\count335
+\MPscratchDim=\dimen276
+\MPnumerator=\count336
+\makeMPintoPDFobject=\count337
+\everyMPtoPDFconversion=\toks49
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
@@ -989,10 +995,10 @@ Package rerunfilecheck Info: File `exercisesdemo.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 25826 strings out of 475030
- 510746 string characters out of 5763462
+ 25896 strings out of 475030
+ 511619 string characters out of 5763462
  1960957 words of memory out of 5000000
- 48078 multiletter control sequences out of 15000+600000
+ 48144 multiletter control sequences out of 15000+600000
  561931 words of font info for 51 fonts, out of 8000000 for 9000
  319 hyphenation exceptions out of 8191
  131i,12n,135p,550b,957s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -1008,7 +1014,7 @@ texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/t
 exlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/tex
 live/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texl
 ive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exercisesdemo.pdf (6 pages, 149249 bytes).
+Output written on exercisesdemo.pdf (6 pages, 149230 bytes).
 PDF statistics:
  126 PDF objects out of 1000 (max. 8388607)
  93 compressed objects within 1 object stream

@@ -31,12 +31,16 @@ each box environment is breakable, but it won't happen automatically. if you wan
 
 this is part of a broader theme which is that the options for any box environment just get shot through straight to the tcolorbox options, so you can just throw stuff there to customize the boxes
 
-### tagging boxes as `unfinished`
+### tagging boxes as unfinished
 
 if you want to tag things as "unfinished" with a red box, use
 `\begin{boxDef}[after title=\unfinished]{}...`
 
-i'd like to have it so that you can just pass `\unfinished` as the option, but that's still a work in progress
+i'd like to have it so that you can just pass `unfinished` as the box option, but that's still a work in progress
+
+### counters
+
+if you want your counters to be just a single number, pass the option `singlecounter` to `structure`. if you do not pass this, by default boxes will be numbered within each section.
 
 ## todo
 - some way of making TODOs apparent
@@ -49,4 +53,4 @@ i'd like to have it so that you can just pass `\unfinished` as the option, but t
 
 - make the setup process nice: script to put notes and exercises file in the right place, only structure file in this repo, this repo as submodule of each class
 
-- the counter is broken right now if you don't pass `singlecounter` as an option to `structure`
+- allow counters to index within whatever other counter
