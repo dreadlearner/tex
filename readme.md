@@ -13,7 +13,7 @@ in particular, it does some nice things for me:
 
 - i'm able to easily move _all_ of my quality of life stuff from one class to another using a simple `git clone`.
 
-## ---- notes ----
+## notes
 
 if you'd like to see some demo material or use my notes/exercises file, they can be found in `demofiles/`.
 
@@ -38,7 +38,7 @@ if you want to tag things as "unfinished" with a red box, use
 
 i'd like to have it so that you can just pass `\unfinished` as the option, but that's still a work in progress
 
-## ---- todo ----
+## todo
 - some way of making TODOs apparent
 
 - ToC
