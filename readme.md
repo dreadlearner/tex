@@ -13,7 +13,17 @@ in particular, it does some nice things for me:
 
 - i'm able to easily move _all_ of my quality of life stuff from one class to another using a simple `git clone`.
 
-## notes
+## ---- notes ----
+
+if you'd like to see some demo material or use my notes/exercises file, they can be found in `demofiles/`.
+
+### minimal files
+
+if you specify `minimal=true` as an option in the usepackage line for structure.sty your file will compile not with colorful boxes, but greyscale boxes of a sligthly different design.
+
+this is so you can easily switch between economical, minimalist files for printing and colorful, pretty files for digital viewing. 
+
+### box options
 
 each box environment is breakable, but it won't happen automatically. if you want your box to break just specify it in the options:
 
@@ -21,14 +31,20 @@ each box environment is breakable, but it won't happen automatically. if you wan
 
 this is part of a broader theme which is that the options for any box environment just get shot through straight to the tcolorbox options, so you can just throw stuff there to customize the boxes
 
-if you'd like to see some demo material or use my notes/exercises file, they can be found in `demofiles/`.
-## todo
+### tagging boxes as `unfinished`
+
+if you want to tag things as "unfinished" with a red box, use
+`\begin{boxDef}[after title=\unfinished]{}...`
+
+i'd like to have it so that you can just pass `\unfinished` as the option, but that's still a work in progress
+
+## ---- todo ----
 - some way of making TODOs apparent
 
 - ToC
 
 - fix issue with boxes taking first letter as title
 
-- "UNFINISHED" boxes in header of problems available as package option?
+- "UNFINISHED" boxes passed as option to box
 
 - make the setup process nice: script to put notes and exercises file in the right place, only structure file in this repo, this repo as submodule of each class
