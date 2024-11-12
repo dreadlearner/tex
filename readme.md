@@ -15,7 +15,7 @@ in particular, it does some nice things for me:
 
 ## notes
 
-if you'd like to see some demo material or use my notes/exercises file, they can be found in `demofiles/`.
+if you'd like to see some demo material or use my notes/exercises files, they can be found in `demofiles/`.
 
 ### minimal files
 
