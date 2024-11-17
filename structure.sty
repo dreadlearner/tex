@@ -21,8 +21,11 @@
 
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
-\newcounter{boxcounter}
-\counterwithin{boxcounter}{section}
+\ifstructure@singlecounter
+\newcommand{\prefixcounter}{}
+\else
+\newcommand{\prefixcounter}{\thesection.}
+\fi
 
 \ifstructure@minimal
 \newenvironment{basicBox}[4][]
@@ -48,7 +51,7 @@
   top=5mm,
   enhanced jigsaw,
   sharp corners=all,
-  title=#2 \thesection.\thetcbcounter: #3,
+  title=#2 \prefixcounter\thetcbcounter: #3,
   #1
 }
 
@@ -63,7 +66,7 @@
   fonttitle=\bfseries,
   enhanced jigsaw,
   rounded corners = all,
-  title=#2 \thesection.\thetcbcounter: #3,
+  title=#2 \prefixcounter\thetcbcounter: #3,
   #1
 }
 
