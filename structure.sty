@@ -4,6 +4,7 @@
 \DeclareOption{minimal=true}{\structure@minimaltrue}
 \DeclareOption{minimal=false}{\structure@minimalfalse}
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
+\DeclareOptionX{counterwithin}[section]{\the#1}
 \ProcessOptions\relax
 
 \RequirePackage{tcolorbox}
@@ -18,6 +19,7 @@
 \RequirePackage{hyperref}
 \RequirePackage{enumitem}
 \RequirePackage{wrapfig}
+\RequirePackage{xkeyval}
 
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
@@ -27,7 +29,7 @@
 \else
 \newcounter{boxcounter}
 \counterwithin{boxcounter}{section}
-\newcommand{\prefixcounter}{\thesection.}
+\newcommand{\prefixcounter}{\KV@counterwithin.}
 \fi
 
 \ifstructure@minimal

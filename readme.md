@@ -42,6 +42,10 @@ i'd like to have it so that you can just pass `unfinished` as the box option, bu
 
 if you want your counters to be just a single number, pass the option `singlecounter` to `structure`. if you do not pass this, by default boxes will be numbered within each section.
 
+if you'd like your counters numbered within some other counter, pass the option `counterwithin=<YOURCOUNTER>`.
+
+the way this is implemented sucks, it literally just appends `YOURCOUNTER.` to the front of the counter, and ensures that the counter reindexes after every iteration of `YOURCOUNTER`.
+
 ## todo
 - some way of making TODOs apparent
 
