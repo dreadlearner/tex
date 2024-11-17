@@ -1,13 +1,17 @@
 \ProvidesPackage{structure}
 \RequirePackage{xkeyval}
+
+
 \newif\ifstructure@minimal
 \newif\ifstructure@singlecounter
-\DeclareOption{minimal=true}{\structure@minimaltrue}
-\DeclareOption{minimal=false}{\structure@minimalfalse}
+
+\define@boolkey[structure]{minimal}[false]{}
+
+
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
 \DeclareOptionX{counterwithin}[\thesection]{\the#1}
 \ProcessOptions\relax
-\ProcessOptionsX[singlecounter,minimal=true,minimal=false]
+\ProcessOptionsX[singlecounter,minimal]
 
 \RequirePackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
