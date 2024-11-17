@@ -1,4 +1,5 @@
 \ProvidesPackage{structure}
+\RequirePackage{xkeyval}
 \newif\ifstructure@minimal
 \newif\ifstructure@singlecounter
 \DeclareOption{minimal=true}{\structure@minimaltrue}
@@ -19,7 +20,6 @@
 \RequirePackage{hyperref}
 \RequirePackage{enumitem}
 \RequirePackage{wrapfig}
-\RequirePackage{xkeyval}
 
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
