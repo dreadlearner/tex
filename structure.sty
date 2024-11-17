@@ -5,7 +5,7 @@
 \newif\ifstructure@minimal
 \newif\ifstructure@singlecounter
 
-\define@boolkey[structure]{minimal}[false]{
+\define@boolkey[structure]{}[]{minimal}[false]{
   \newenvironment{basicBox}[4][]
                  { \begin{basicBoxMin}[#1]{#2}{#3}{#4}}
                  { \end{basicBoxMin}}
