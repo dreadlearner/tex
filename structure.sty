@@ -24,7 +24,7 @@
 \ifstructure@singlecounter
 \newcounter{boxcounter}
 \else
-\newcounter{boxcounter}{section}
+\counterwithin{boxcounter}{section}
 \fi
 
 \ifstructure@minimal
