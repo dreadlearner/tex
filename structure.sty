@@ -5,6 +5,7 @@
 \DeclareOption{minimal=true}{\structure@minimaltrue}
 \DeclareOption{minimal=false}{\structure@minimalfalse}
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
+\DeclareOptionX{counterwithin}[\thesection]{\the#1}
 \ProcessOptions\relax
 
 \RequirePackage{tcolorbox}
@@ -28,7 +29,7 @@
 \else
 \newcounter{boxcounter}
 \counterwithin{boxcounter}{section}
-\newcommand{\prefixcounter}{\thesection.}
+\newcommand{\prefixcounter}{.} % you need to put the value of the `counterwithin` key here
 \fi
 
 \ifstructure@minimal
@@ -71,7 +72,7 @@
   enhanced jigsaw,
   rounded corners = all,
   title=#2 \prefixcounter\thetcbcounter: #3,
-  #1
+  #1 \counterwithin
 }
 
 % ---- specific environments ----
