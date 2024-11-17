@@ -9,6 +9,7 @@
 
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
 \DeclareOptionX{counterwithin}[\thesection]{\the#1}
+\DeclareOptionX{minimal}{\setkey[]{}[]{minimal=#1}}
 \ProcessOptionsX[singlecounter,minimal]\relax
 
 \RequirePackage{tcolorbox}
