@@ -7,6 +7,7 @@
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
 \DeclareOptionX{counterwithin}[\thesection]{\the#1}
 \ProcessOptions\relax
+\ExecuteOptionsX
 
 \RequirePackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
@@ -72,7 +73,7 @@
   enhanced jigsaw,
   rounded corners = all,
   title=#2 \prefixcounter\thetcbcounter: #3,
-  #1 \counterwithin
+  #1
 }
 
 % ---- specific environments ----
