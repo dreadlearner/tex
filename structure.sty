@@ -23,7 +23,8 @@
 
 \newcounter{boxcounter}
 
-\if{!structure@singlecounter}
+\ifstructure@singlecounter
+\else
 \counterwithin{boxcounter}{section}
 \fi
 
