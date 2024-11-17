@@ -5,10 +5,7 @@
 \DeclareOption{minimal=true}{\structure@minimaltrue}
 \DeclareOption{minimal=false}{\structure@minimalfalse}
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
-\DeclareOptionX{counterwithin}[section]{\the#1.}
-\DeclareOptionX{minimal}[]
 \ProcessOptions\relax
-\ProcessOptionsX
 
 \RequirePackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
@@ -31,7 +28,7 @@
 \else
 \newcounter{boxcounter}
 \counterwithin{boxcounter}{section}
-\newcommand{\prefixcounter}{\setkeys{counterwithin}}
+\newcommand{\prefixcounter}{\thesection.}
 \fi
 
 \ifstructure@minimal
