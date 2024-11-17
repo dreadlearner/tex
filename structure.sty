@@ -21,9 +21,9 @@
 
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
-\ifstructure@singlecounter
 \newcounter{boxcounter}
-\else
+
+\if{!structure@singlecounter}
 \counterwithin{boxcounter}{section}
 \fi
 
