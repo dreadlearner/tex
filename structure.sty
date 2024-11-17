@@ -5,7 +5,7 @@
 \DeclareOption{minimal=true}{\structure@minimaltrue}
 \DeclareOption{minimal=false}{\structure@minimalfalse}
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
-\DeclareOptionX{counterwithin}[section]{\the#1}
+\DeclareOptionX{counterwithin}[section]{\the#1.}
 \ProcessOptions\relax
 \ProcessOptionsX
 
@@ -30,7 +30,7 @@
 \else
 \newcounter{boxcounter}
 \counterwithin{boxcounter}{section}
-\newcommand{\prefixcounter}{\setkeys{counterwithin}.}
+\newcommand{\prefixcounter}{\setkeys{counterwithin}}
 \fi
 
 \ifstructure@minimal
