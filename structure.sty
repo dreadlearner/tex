@@ -6,7 +6,8 @@
 \DeclareOption{minimal=false}{\structure@minimalfalse}
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
 \DeclareOptionX{counterwithin}[section]{\the#1.}
-\ProcessOptionsX\relax
+\ProcessOptions\relax
+\ExecuteOptionsX
 
 \RequirePackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
