@@ -22,8 +22,11 @@
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
 \ifstructure@singlecounter
+\newcounter{boxcounter}
 \newcommand{\prefixcounter}{}
 \else
+\newcounter{boxcounter}
+\counterwithin{boxcounter}{section}
 \newcommand{\prefixcounter}{\thesection.}
 \fi
 
