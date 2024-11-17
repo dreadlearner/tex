@@ -5,7 +5,7 @@
 \newif\ifstructure@minimal
 \newif\ifstructure@singlecounter
 
-\define@boolkey{structure}{minimal}[false]{}
+\define@boolkey[structure]{minimal}[false]{}
 
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
 \DeclareOptionX{counterwithin}[\thesection]{\the#1}
