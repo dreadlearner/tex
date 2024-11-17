@@ -21,10 +21,10 @@
 
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
-\newcounter{boxcounter}
-
 \ifstructure@singlecounter
+\newcounter{boxcounter}
 \else
+\newcounter{boxcounter}
 \counterwithin{boxcounter}{section}
 \fi
 
