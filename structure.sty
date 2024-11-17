@@ -22,7 +22,7 @@
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
 \newcounter{boxcounter}
-\counterwithin{boxcounter}{section}
+\counterwithin*{boxcounter}{section}
 
 \ifstructure@minimal
 \newenvironment{basicBox}[4][]
@@ -63,7 +63,7 @@
   fonttitle=\bfseries,
   enhanced jigsaw,
   rounded corners = all,
-  title=#2 \thetcbcounter: #3 \theboxcounter,
+  title=#2 \thetcbcounter: #3,
   #1
 }
 
