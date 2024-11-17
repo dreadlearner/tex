@@ -5,7 +5,15 @@
 \newif\ifstructure@minimal
 \newif\ifstructure@singlecounter
 
-\define@boolkey[structure]{minimal}[false]{}
+\define@boolkey[structure]{minimal}[false]{
+  \newenvironment{basicBox}[4][]
+                 { \begin{basicBoxMin}[#1]{#2}{#3}{#4}}
+                 { \end{basicBoxMin}}
+                 \else
+                 \newenvironment{basicBox}[4][]
+                                { \begin{basicBoxPretty}[#1]{#2}{#3}{#4}}
+                                { \end{basicBoxPretty}}
+                                \fi}
 
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
 \DeclareOptionX{counterwithin}[\thesection]{\the#1}
@@ -37,14 +45,7 @@
 \fi
 
 \ifstructure@minimal
-\newenvironment{basicBox}[4][]
-               { \begin{basicBoxMin}[#1]{#2}{#3}{#4}}
-               { \end{basicBoxMin}}
-               \else
-               \newenvironment{basicBox}[4][]
-                              { \begin{basicBoxPretty}[#1]{#2}{#3}{#4}}
-                              { \end{basicBoxPretty}}
-                              \fi
+
 
 % ---- minimal ----
 
