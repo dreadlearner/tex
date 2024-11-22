@@ -1,10 +1,6 @@
 \ProvidesPackage{structure}
-\newif\ifstructure@minimal
-\newif\ifstructure@singlecounter
-\DeclareOption{minimal=true}{\structure@minimaltrue}
-\DeclareOption{minimal=false}{\structure@minimalfalse}
-\DeclareOption{singlecounter}{\structure@singlecountertrue}
-\ProcessOptions\relax
+
+% ---- packages ----
 
 \RequirePackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
@@ -18,30 +14,27 @@
 \RequirePackage{hyperref}
 \RequirePackage{enumitem}
 \RequirePackage{wrapfig}
+\RequirePackage{xkeyval}
 
-\newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
+% --- specifying options ----
 
-\newcommand{\countertype}{section}
+\define@boolkey{structure}{minimal}[false]{}
+\define@key{structure}{counter}[section]{}
 
-\ifstructure@singlecounter
-\newcounter{boxcounter}
+\ProcessOptionsX<structure>\relax
+
+% ---- option behavior ----
+
+% if minimal, replace the default box environment with the minimal one
+\ifKV@structure@minimal
+\newenvironment{basicBox}[4][]{\begin{basicBoxMin}[#1]{#2}{#3}{#4}}{\end{basicBoxMin}}
 \else
-\newcounter{boxcounter}[section]
+\newenvironment{basicBox}[4][]{\begin{basicBoxPretty}[#1]{#2}{#3}{#4}}{\end{basicBoxPretty}}
 \fi
 
-\ifstructure@minimal
-\newenvironment{basicBox}[4][]
-               { \begin{basicBoxMin}[#1]{#2}{#3}{#4}}
-               { \end{basicBoxMin}}
-               \else
-               \newenvironment{basicBox}[4][]
-                              { \begin{basicBoxPretty}[#1]{#2}{#3}{#4}}
-                              { \end{basicBoxPretty}}
-                              \fi
+% ---- minimal box ----
 
-% ---- minimal ----
-
-\newtcolorbox[use counter=boxcounter]{basicBoxMin}[4][]{
+\newtcolorbox[auto counter, number within=section]{basicBoxMin}[4][]{
   hypertarget=box\thetcbcounter,
   colback=white,
   colframe=gray!60,
@@ -57,10 +50,10 @@
   #1
 }
 
-% ---- pretty ----
+% ---- pretty box ----
 
 % taken from Neil's tex stuff
-\newtcolorbox[use counter=boxcounter]{basicBoxPretty}[4][]{
+\newtcolorbox[auto counter, number within=section]{basicBoxPretty}[4][]{
   hypertarget=box\thetcbcounter,
   colback=#4!5!white,
   colframe=#4!75!black,
@@ -110,9 +103,13 @@
                { \begin{basicBox}[#1]{Quote}{#2}{Purple}}
                { \end{basicBox} }
 
+% ---- commands ----
+               
 \newcommand{\todo}[1]{\begin{mdframed}\textbf{TODO:} #1\end{mdframed}}
 
 \renewcommand\qedsymbol{$\triangle$}
+
+\newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
 \newcommand\sol[1]{
   \begin{mdframed}
