@@ -1,16 +1,10 @@
 \ProvidesPackage{structure}
-\RequirePackage{xkeyval}
-
-
 \newif\ifstructure@minimal
 \newif\ifstructure@singlecounter
-
-\define@boolkey[]{structure}[]{minimal}[false]{}
-
+\DeclareOption{minimal=true}{\structure@minimaltrue}
+\DeclareOption{minimal=false}{\structure@minimalfalse}
 \DeclareOption{singlecounter}{\structure@singlecountertrue}
-\DeclareOptionX{counterwithin}[\thesection]{\the#1}
-\DeclareOptionX{minimal}{\setkey[]{structure}[]{minimal=#1}}
-\ProcessOptionsX[singlecounter, minimal]\relax
+\ProcessOptions\relax
 
 \RequirePackage{tcolorbox}
 \tcbuselibrary{skins,breakable}
@@ -27,13 +21,12 @@
 
 \newcommand{\unfinished}{{\hfill\colorbox{red}{unfinished}}}
 
+\newcommand{\countertype}{section}
+
 \ifstructure@singlecounter
 \newcounter{boxcounter}
-\newcommand{\prefixcounter}{}
 \else
-\newcounter{boxcounter}
-\counterwithin{boxcounter}{section}
-\newcommand{\prefixcounter}{.} % you need to put the value of the `counterwithin` key here
+\newcounter{boxcounter}[section]
 \fi
 
 \ifstructure@minimal
@@ -60,7 +53,7 @@
   top=5mm,
   enhanced jigsaw,
   sharp corners=all,
-  title=#2 \prefixcounter\thetcbcounter: #3,
+  title=#2 \thetcbcounter: #3,
   #1
 }
 
@@ -75,7 +68,7 @@
   fonttitle=\bfseries,
   enhanced jigsaw,
   rounded corners = all,
-  title=#2 \prefixcounter\thetcbcounter: #3,
+  title=#2 \thetcbcounter: #3,
   #1
 }
 

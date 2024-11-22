@@ -11,7 +11,7 @@ in particular, it does some nice things for me:
 
 - i'm able to keep a consistent set of macros and environments across all my projects
 
-- i'm able to easily move _all_ of my quality of life stuff from one class to another using a simple `git clone`.
+- i'm able to easily move _all_ of my quality of life stuff from one class to another using a simple sh script.
 
 ## notes
 
@@ -19,7 +19,7 @@ if you'd like to see some demo material or use my notes/exercises files, they ca
 
 ### minimal files
 
-if you specify `minimal=true` as an option in the usepackage line for structure.sty your file will compile not with colorful boxes, but greyscale boxes of a sligthly different design.
+if you specify `minimal=true` as an option in the usepackage line for structure.sty your file will compile not with colorful boxes, but greyscale boxes of a slightly different design.
 
 this is so you can easily switch between economical, minimalist files for printing and colorful, pretty files for digital viewing. 
 
@@ -55,6 +55,10 @@ the way this is implemented sucks, it literally just appends `YOURCOUNTER.` to t
 
 - "UNFINISHED" boxes passed as option to box
 
-- make the setup process nice: script to put notes and exercises file in the right place, only structure file in this repo, this repo as submodule of each class
-
 - allow counters to index within whatever other counter
+
+- fix hypertarget for each box
+
+- there may be some testing remnants in `exercises` and `notes`. fix those.
+
+- maybe all boxes should be breakable by default?
