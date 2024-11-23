@@ -55,10 +55,8 @@ the way this is implemented sucks, it literally just appends `YOURCOUNTER.` to t
 
 - "UNFINISHED" boxes passed as option to box
 
-- allow counters to index within whatever other counter
-
 - fix hypertarget for each box
 
-- there may be some testing remnants in `exercises` and `notes`. fix those.
-
 - maybe all boxes should be breakable by default?
+
+- for some reason the boxes have the right counters but they are not rendered as `X.Y`, just as `Y`

@@ -19,7 +19,11 @@
 % --- specifying options ----
 
 \define@boolkey{structure}{minimal}[false]{}
-\define@key{structure}{counter}[section]{}
+
+\newcommand\counteroption{defaultcounter}
+\newcounter{defaultcounter}
+\counterwithin{defaultcounter}{section}
+\define@key{structure}{counter}{\renewcommand\counteroption{#1}}
 
 \ProcessOptionsX<structure>\relax
 
@@ -34,7 +38,7 @@
 
 % ---- minimal box ----
 
-\newtcolorbox[auto counter, number within=section]{basicBoxMin}[4][]{
+\newtcolorbox[use counter=\counteroption]{basicBoxMin}[4][]{
   hypertarget=box\thetcbcounter,
   colback=white,
   colframe=gray!60,
@@ -53,7 +57,7 @@
 % ---- pretty box ----
 
 % taken from Neil's tex stuff
-\newtcolorbox[auto counter, number within=section]{basicBoxPretty}[4][]{
+\newtcolorbox[use counter=\counteroption]{basicBoxPretty}[4][]{
   hypertarget=box\thetcbcounter,
   colback=#4!5!white,
   colframe=#4!75!black,

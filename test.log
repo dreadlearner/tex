@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.17)  22 NOV 2024 15:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.17)  23 NOV 2024 01:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -809,8 +809,7 @@ Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
 \XKV@depth=\count333
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
 ))
-\c@tcb@cnt@basicBoxMin=\count334
-\c@tcb@cnt@basicBoxPretty=\count335
+\c@defaultcounter=\count334
 )
 (./test.aux)
 \openout1 = `test.aux'.
@@ -870,16 +869,16 @@ LaTeX Font Info:    ... okay on input line 9.
 
 (/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count336
+\scratchcounter=\count335
 \scratchdimen=\dimen275
 \scratchbox=\box86
-\nofMPsegments=\count337
-\nofMParguments=\count338
+\nofMPsegments=\count336
+\nofMParguments=\count337
 \everyMPshowfont=\toks50
-\MPscratchCnt=\count339
+\MPscratchCnt=\count338
 \MPscratchDim=\dimen276
-\MPnumerator=\count340
-\makeMPintoPDFobject=\count341
+\MPnumerator=\count339
+\makeMPintoPDFobject=\count340
 \everyMPtoPDFconversion=\toks51
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -900,30 +899,48 @@ Package hyperref Info: Link coloring OFF on input line 9.
 
 [1
 
-{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./test.aux)
+{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+pdfTeX warning (ext4): destination with the same identifier (name{box1}) has be
+en already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.25 \end{document}
+                   
+pdfTeX warning (ext4): destination with the same identifier (name{box2}) has be
+en already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  \__shipout_drop_firstpage_...
+l.25 \end{document}
+                   ] (./test.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
  ***********
-Package rerunfilecheck Info: File `test.out' has not changed.
-(rerunfilecheck)             Checksum: DD0C81AB2DDA8E01B60A7D09A8B5F542;63.
+
+
+Package rerunfilecheck Warning: File `test.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `test.out':
+(rerunfilecheck)             Before: FDBB9C582A315A01BD13B09C0ED4A40D;126
+(rerunfilecheck)             After:  6E9703C84D9EB4DBD77665A2B2E17F4F;203.
  ) 
 Here is how much of TeX's memory you used:
- 25848 strings out of 473362
- 511141 string characters out of 5720989
- 929512 words of memory out of 5000000
- 48553 multiletter control sequences out of 15000+600000
- 558982 words of font info for 39 fonts, out of 8000000 for 9000
+ 25863 strings out of 473362
+ 511336 string characters out of 5720989
+ 940358 words of memory out of 5000000
+ 48562 multiletter control sequences out of 15000+600000
+ 559587 words of font info for 41 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  131i,7n,135p,541b,953s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on test.pdf (1 page, 34849 bytes).
+Output written on test.pdf (1 page, 37365 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 49 PDF objects out of 1000 (max. 8388607)
+ 39 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 29 words of extra memory for PDF output out of 10000 (max. 10000000)
 
