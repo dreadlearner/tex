@@ -54,3 +54,5 @@ if you want your counters incremented as a subcounter of something other than `s
 - fix hypertarget for each box
 
 - maybe all boxes should be breakable by default?
+
+- it would be nice if you could just pass a counter itself as an option for boxes to be numbered with. `tcolorbox` has a mechanism for this using the `use counter=` option, but i can't get it to work
