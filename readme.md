@@ -11,11 +11,11 @@ in particular, it does some nice things for me:
 
 - i'm able to keep a consistent set of macros and environments across all my projects
 
-- i'm able to easily move _all_ of my quality of life stuff from one class to another using a simple sh script.
+- i'm able to easily move my quality of life stuff from one place to another using a simple sh script.
 
 ## notes
 
-if you'd like to see some demo material or use my notes/exercises files, they can be found in `demofiles/`.
+if you'd like to see some demo material or use my notes/exercises files, they can be found in `demofiles`.
 
 ### minimal files
 
@@ -40,11 +40,7 @@ i'd like to have it so that you can just pass `unfinished` as the box option, bu
 
 ### counters
 
-if you want your counters to be just a single number, pass the option `singlecounter` to `structure`. if you do not pass this, by default boxes will be numbered within each section.
-
-if you'd like your counters numbered within some other counter, pass the option `counterwithin=<YOURCOUNTER>`.
-
-the way this is implemented sucks, it literally just appends `YOURCOUNTER.` to the front of the counter, and ensures that the counter reindexes after every iteration of `YOURCOUNTER`.
+if you want your counters incremented as a subcounter of something other than `section`, pass the name of the counter you want the boxes to number with respect to as the argument to the option `counterinside` (i know this naming convention sucks).
 
 ## todo
 - some way of making TODOs apparent
@@ -58,5 +54,3 @@ the way this is implemented sucks, it literally just appends `YOURCOUNTER.` to t
 - fix hypertarget for each box
 
 - maybe all boxes should be breakable by default?
-
-- for some reason the boxes have the right counters but they are not rendered as `X.Y`, just as `Y`

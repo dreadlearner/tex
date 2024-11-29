@@ -19,12 +19,7 @@
 % --- specifying options ----
 
 \define@boolkey{structure}{minimal}[false]{}
-
-\newcommand\counteroption{defaultcounter}
-\newcounter{defaultcounter}
-\counterwithin{defaultcounter}{section}
-\define@key{structure}{counter}{\renewcommand\counteroption{#1}}
-
+\define@key{structure}{counterinside}[section]{\newcommand\counterinside{#1}}
 \ProcessOptionsX<structure>\relax
 
 % ---- option behavior ----
@@ -38,7 +33,7 @@
 
 % ---- minimal box ----
 
-\newtcolorbox[use counter=\counteroption]{basicBoxMin}[4][]{
+\newtcolorbox[auto counter, number within=\counterinside]{basicBoxMin}[4][]{
   hypertarget=box\thetcbcounter,
   colback=white,
   colframe=gray!60,
@@ -51,13 +46,13 @@
   enhanced jigsaw,
   sharp corners=all,
   title=#2 \thetcbcounter: #3,
-  #1
-}
+  #1}
+
 
 % ---- pretty box ----
 
 % taken from Neil's tex stuff
-\newtcolorbox[use counter=\counteroption]{basicBoxPretty}[4][]{
+\newtcolorbox[auto counter, number within=\counterinside]{basicBoxPretty}[4][]{
   hypertarget=box\thetcbcounter,
   colback=#4!5!white,
   colframe=#4!75!black,
