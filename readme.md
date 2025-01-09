@@ -40,7 +40,7 @@ i'd like to have it so that you can just pass `unfinished` as the box option, bu
 
 ### counters
 
-if you want your counters incremented as a subcounter of something other than `section`, pass the name of the counter you want the boxes to number with respect to as the argument to the option `counterinside` (i know this naming convention sucks).
+right now counters are numbered independently of anything. you can pass `sectioncounter=true` as an option to have counters numbered within sections. the implementation of this is actually revolting and I want to have it be able to number within any counter, but that's hard.
 
 ## todo
 - some way of making TODOs apparent

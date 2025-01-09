@@ -17,9 +17,9 @@
 \RequirePackage{xkeyval}
 
 % --- specifying options ----
-
+\newcounter{defaultcounter}
 \define@boolkey{structure}{minimal}[false]{}
-\define@key{structure}{counterinside}[section]{\newcommand\counterinside{#1}}
+\define@boolkey{structure}{sectioncounter}[true]{}
 \ProcessOptionsX<structure>\relax
 
 % ---- option behavior ----
@@ -32,8 +32,8 @@
 \fi
 
 % ---- minimal box ----
-
-\newtcolorbox[auto counter, number within=\counterinside]{basicBoxMin}[4][]{
+\ifKV@structure@sectioncounter
+\newtcolorbox[auto counter, number within=section]{basicBoxMin}[4][]{
   hypertarget=box\thetcbcounter,
   colback=white,
   colframe=gray!60,
@@ -52,7 +52,7 @@
 % ---- pretty box ----
 
 % taken from Neil's tex stuff
-\newtcolorbox[auto counter, number within=\counterinside]{basicBoxPretty}[4][]{
+\newtcolorbox[auto counter, number within=section]{basicBoxPretty}[4][]{
   hypertarget=box\thetcbcounter,
   colback=#4!5!white,
   colframe=#4!75!black,
@@ -63,6 +63,38 @@
   title=#2 \thetcbcounter: #3,
   #1
 }
+\else
+\newtcolorbox[auto counter]{basicBoxMin}[4][]{
+  hypertarget=box\thetcbcounter,
+  colback=white,
+  colframe=gray!60,
+  coltitle=black,
+  colbacktitle=gray!60,
+  attach boxed title to top left={yshift=-3mm,xshift=5mm},
+  boxed title style={sharp corners=all, width=2mm, height=6mm, valign=center},
+  fonttitle=\bfseries,
+  top=5mm,
+  enhanced jigsaw,
+  sharp corners=all,
+  title=#2 \thetcbcounter: #3,
+  #1}
+
+
+% ---- pretty box ----
+
+% taken from Neil's tex stuff
+\newtcolorbox[auto counter]{basicBoxPretty}[4][]{
+  hypertarget=box\thetcbcounter,
+  colback=#4!5!white,
+  colframe=#4!75!black,
+  %colupper=#4!50!black,
+  fonttitle=\bfseries,
+  enhanced jigsaw,
+  rounded corners = all,
+  title=#2 \thetcbcounter: #3,
+  #1
+}
+\fi
 
 % ---- specific environments ----
 
