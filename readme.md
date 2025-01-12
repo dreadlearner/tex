@@ -29,7 +29,9 @@ each box environment is breakable, but it won't happen automatically. if you wan
 
 `\begin{boxDef}[breakable]{Definition} ....`
 
-this is part of a broader theme which is that the options for any box environment just get shot through straight to the tcolorbox options, so you can just throw stuff there to customize the boxes
+this is part of a broader theme which is that the options for any box environment just get shot through straight to the tcolorbox options, so you can just throw stuff there to customize the boxes.
+
+P.S. the breakable option will also let your boxes fit onto pages with limited space, if you find that a box "should" fit but for some reason isn't.
 
 ### tagging boxes as unfinished
 
