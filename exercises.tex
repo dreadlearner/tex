@@ -6,8 +6,17 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{\footnotesize CLASSNAME: ASSIGNMENT TITLE}
-\rhead{\footnotesize Name}
+
+% ---- OPTIONS ----
+\newcommand{\classname}{}
+\newcommand{\assignment}{}
+\newcommand{\name}{}
+\newcommand{\prof}{}
+\newcommand{\sem}{}
+\newcommand{\uni}{}
+
+\lhead{\footnotesize \classname: \assignment}
+\rhead{\footnotesize \name}
 \cfoot{\footnotesize \thepage}
 
 \begin{document}
@@ -15,16 +24,16 @@
 \thispagestyle{empty}
 
 \begin{tabular}{p{15.5cm}}
-  {\large \bf CLASSNAME} \\ UNIVERSITY \\ SEMESTER \\ PROFESSOR \\ \hline \\
+  {\large \bf \class} \\ \uni \\ \sem \\ \prof \\ \hline \\
 \end{tabular}
 
 \vspace{3mm}
 
 \begin{center}
-  {\Large \bf ASSIGNMENT TITLE}
+  {\Large \bf \assignment}
   \vspace{2mm}
 
-  {\bf Name}
+  {\bf \name}
 \end{center}
 
 \vspace{4mm}
