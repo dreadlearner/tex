@@ -57,6 +57,6 @@ right now counters are numbered independently of anything. you can pass `section
 
 - maybe all boxes should be breakable by default?
 
-- it would be nice if you could just pass a counter itself as an option for boxes to be numbered with. `tcolorbox` has a mechanism for this using the `use counter=` option, but i can't get it to work
+- it would be nice if you could just pass a counter itself as an option for boxes to be numbered with. `tcolorbox` has a mechanism for this using the `use counter=` option, but i can't get it to work. there might be a way to do this using /tcb/phantom, see 4.21 of tcb manual
 
 - pagebreaks suck if you are using nested `sol` or `solproof` environments. as of right now you just need to end the environment where appropriate and create a new `mdframed` environment for the part that goes on the next page
