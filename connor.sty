@@ -70,10 +70,10 @@
   backgroundcolor=emerald!15!white,
   linecolor=emerald!85!black
 }
-\newcommand{\claim}[2][\theexercisenum.\Alph{partnum}]{%
+\newcommand{\claim}[3][\theexercisenum.\Alph{partnum}][partnum]{%
   \begin{mdframed}[style=claim, frametitle=\bfseries Claim #1]{}
-    \stepcounter{partnum}
-    #2
+    \stepcounter{#2}
+    #3
   \end{mdframed}
 }
 
