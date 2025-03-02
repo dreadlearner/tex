@@ -1,0 +1,99 @@
+\ProvidesPackage{connor}
+
+\author{Connor Haynes}
+
+% ---- packages ----
+\RequirePackage[top = 2.cm, bottom = 2.5cm, left = 3.5cm, right = 3.5cm]{geometry}
+\RequirePackage{amsmath}
+\RequirePackage{mdframed}
+\RequirePackage{dsfont}
+\RequirePackage{titlesec}
+\RequirePackage{xcolor}
+\RequirePackage{fancyhdr}
+\usepackage{../class}
+
+% ---- commands ----
+\newcommand{\raisedS}{%
+  \raisebox{\dimexpr(\fontcharht\font`X-\height+(\depth/2))/2\relax}{\S}
+}
+\newcommand{\qedsymbol}{$\triangle$}
+\newcommand{\intro}{%  
+  \pagestyle{fancy}
+  \fancyhf{}
+  \lhead{\footnotesize \class: \@title}
+  \rhead{\footnotesize \@author}
+  \cfoot{\footnotesize \thepage}
+  \thispagestyle{empty}
+  \flushleft\begin{tabular}{p{14cm}}
+    {\large \bf \class} \\ \uni \\ \sem \\ \prof \\ \hline \\
+  \end{tabular}
+  \vspace{3mm}
+  \begin{center}
+    {\Large \bf \@title}\\
+    \vspace{2mm}
+    {\bf \@author}
+  \end{center}
+  \vspace{4mm}
+}
+
+% ---- colors ----
+\definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
+\definecolor{tuftsblue}{rgb}{0.28, 0.57, 0.81}
+\definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+
+% ---- exercise environment ----
+
+% each exercise gets its own section. each part of a problem is labeled by "Claim S.X", where S is the section (exercise) number and X is the part, labeled alphabetically. maybe i need to add some support for more than twenty-six parts, but i think it is fine for now.
+
+% -- counters --
+\newcounter{exercisenum}
+\newcounter{partnum}
+\counterwithin{partnum}{exercisenum}
+\stepcounter{partnum}
+
+% -- section --
+
+% i'm not sure i like the spacing between things in the section headers
+
+\titleformat{\section}{%
+  \normalfont\Large\bfseries
+}{%
+  {\color{bostonuniversityred}\raisedS}\arabic{section}
+}{1em}{}
+
+% -- claim --
+\mdfdefinestyle{claim}{%
+  topline=false,
+  rightline=false,
+  bottomline=false,
+  linewidth=2pt,
+  backgroundcolor=emerald!15!white,
+  linecolor=emerald!85!black,
+  frametitle=\bfseries Claim \theexercisenum.\Alph{partnum}
+}
+\newcommand{\claim}[1]{%
+  \begin{mdframed}[style=claim]
+    \stepcounter{partnum}
+    #1
+  \end{mdframed}
+}
+
+% -- proof --
+\newcommand{\pf}[1]{%
+  \emph{Proof. }#1\hfill\qedsymbol
+}
+
+% -- solution --
+\newcommand{\sol}[1]{%
+  \emph{Solution. }#1
+}
+
+% -- exercise --
+\newcommand{\exercise}[2]{%
+  \stepcounter{exercisenum}
+  \ifnum \theexercisenum > 1
+  \newpage
+  \fi
+  \section{#1}
+  #2
+}

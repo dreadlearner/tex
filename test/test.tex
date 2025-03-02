@@ -1,10 +1,40 @@
-\documentclass{article}
-\usepackage{../structure}
+\documentclass[10pt]{article}
+\usepackage{../connor}
 
+\title{Test Assignment}
 
 \begin{document}
-\section{Testing...}
-\begin{boxProb}[step=\tcbcounter1]{test}
-  Test
-\end{boxProb}
+\intro
+\exercise{Test exercise}{%
+  \claim{Hello, World!}
+  \pf{I just said hello, what more do you want from me?}
+  \claim{Hello again, World!}
+  \sol{Ugh.}
+}
+
+\exercise{Markov's + Chebyshev's inequalities}{%
+  \claim{Supppose that $X$ and $Y$ are discrete random variables on the same probability space, both with finite expectations $\mathds{E}[X]<\infty$, $\mathds{E}[Y]<\infty$. Prove that, if $X\leq Y$ as functions, then $\mathds{E}[X]\leq\mathds{E}[Y]$.
+  }
+  \pf{Let $X$ and $Y$ be discrete random variables on the same probability space $(\Omega,\mathds{P},\mathcal{F})$ and with finite expectation such that $X\leq Y$. Then for any $\omega\in\Omega$ we have that $X(\omega)\leq Y(\omega)$. Writing $X(\omega)=k_1$ and $Y(\omega)=k_2$, we can see that $\mathds{P}(X=k_1)=\mathds{P}(Y=k_2)$ for any pair of elements $k_1$ and $k_2$ with the same preimage. Then it is the case that $k_1\mathds{P}(X=k_1)\leq\mathds{P}(Y=k_2)$ for all of these pairs, and so we may sum across all $\omega$ to find that
+    \[\mathds{E}[X]=\sum_{k\in\text{Im}(X)}k\mathds{P}(X=k)\leq\sum_{k\in\text{Im}(Y)}k\mathds{P}(Y=k)=\mathds{E}[Y].\]
+  }
+
+  \claim{Prove \textbf{Markov's inequality:} If $X$ is a nonnegative random variable, then for any $t>0$ we have
+    \[\mathds{P}(X\geq t)\leq\frac{\mathds{E}[X]}{t}.\]
+  }
+  \pf{Let $X$ be a nonnegative discrete random variable on some probability space $(\Omega,\mathds{P},\mathcal{F})$ and $t$ some positive constant. Begin by noting that, if $X(\omega)<t$ for all $\omega\in\Omega$ then the inequality holds by the nonnegativity of $X$ and $t$. Suppose $X(\omega)=k\geq t$ for some $\omega\in\Omega$, $k\in\mathds{R}$. Note that by the nonnegativity of $X$ we have that
+      \[\sum_{k\in\text{Im}(X),k<t}k\mathds{P}(X=k)\geq0.\]
+      Then we have 
+      \[\mathds{E}[X]-t\mathds{P}(X\geq t)=\sum_{k\in\text{Im}(X)}k\mathds{P}(X=k)-\sum_{k\in\text{Im}(\omega),k\geq t}t\mathds{P}(X=k)\]\[=\sum_{k\in\text{Im}(X),k<t}k\mathds{P}(X=k)\geq0.\]
+      Therefore $\mathds{E}[X]-t\mathds{P}(X\geq t)\geq0$, and dividing across by $t$ we see that the result follows.}
+
+  \claim{Use Markov's inequality to give a short proof of \textbf{Chebyshev's inequality:} If $X$ is a random variable with finite expectation and finite, positive variance, then for any $a>0$ we have
+    \[\mathds{P}\left(\left|X-\mathds{E}[X]\right|\geq a\sqrt{\text{Var}(X)}\right)\leq\frac{1}{a^2}.\]
+  }
+  \pf{Let $X$ be a discrete random variable with finite expectation and finite, positive variance. Let $a$ be a positive constant. Note that
+      \[\mathds{P}\left(\left|X-\mathds{E}[X]\right|\geq a\sqrt{\text{Var}(X)}\right)=\mathds{P}\left(\left(X-\mathds{E}[X]\right)^2\geq a^2\text{Var}(X)\right).\]
+      By Markov's inequality we can see that
+      \[\mathds{P}\left(\left(X-\mathds{E}[X]\right)^2\geq a^2\text{Var}(X)\right)\leq\frac{\mathds{E}\left[X^2-2X\mathds{E}[X]+\mathds{E}[X]^2\right]}{a^2\text{Var}(X)}\]\[=\frac{\mathds{E}\left[X^2\right]-2\mathds{E}[X]\mathds{E}[X]+\mathds{E}[X]^2}{a^2\text{Var}(X)}=\frac{\mathds{E}\left[X^2\right]-\mathds{E}[X]^2}{a^2\text{Var}(X)}=\frac{1}{a^2}.\]
+    Therefore we have that $\mathds{P}\left(\left|X-\mathds{E}[X]\right|\geq a\sqrt{\text{Var}(X)}\right)\leq\frac{1}{a^2}$.}
+}
 \end{document}
