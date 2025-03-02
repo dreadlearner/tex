@@ -69,9 +69,10 @@
   bottomline=false,
   linewidth=2pt,
   backgroundcolor=emerald!15!white,
-  linecolor=emerald!85!black
+  linecolor=emerald!85!black,
+  frametitlefont=\normalfont
 }
-\newcommandx{\claim}[3][1=\bfseries Claim \theexercisenum.\Alph{partnum}, 2=partnum]{%
+\newcommandx{\claim}[3][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum]{%
   \begin{mdframed}[style=claim, frametitle=#1]
     \stepcounter{#2}
     #3
