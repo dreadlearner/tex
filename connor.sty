@@ -13,7 +13,11 @@
 \RequirePackage{xargs}
 \RequirePackage{enumitem}
 \RequirePackage{tikz}
+\RequirePackage{xkeyval}
 \usepackage{../class}
+
+% ---- options ----
+\define@boolkey{connor}{pagebreak}[false]{}
 
 % ---- commands ----
 \newcommand{\raisedS}{%
@@ -99,7 +103,9 @@
 \newcommand{\exercise}[2]{%
   \stepcounter{exercisenum}
   \ifnum \theexercisenum > 1
+  \ifKV@connor@pagebreak
   \newpage
+  \fi
   \fi
   \section{#1}
   #2
