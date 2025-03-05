@@ -53,6 +53,7 @@
 \definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
 \definecolor{tuftsblue}{rgb}{0.28, 0.57, 0.81}
 \definecolor{emerald}{rgb}{0.31, 0.78, 0.47}
+\definecolor{byzantine}{rgb}{0.74, 0.2, 0.64}
 
 % ---- exercise environment ----
 
@@ -114,7 +115,7 @@
 
 % ---- fact environment ----
 
-% -- counter --
+% -- counters --
 \newcounter{factnum}
 \counterwithin*{factnum}{section}
 
@@ -124,8 +125,8 @@
   rightline=false,
   bottomline=false,
   linewidth=2pt,
-  backgroundcolor=emerald!15!white,
-  linecolor=emerald!85!black
+  backgroundcolor=byzantine!15!white,
+  linecolor=byzantine!85!black
 }
 \newcommandx{\fact}[3][1=Fact \thesection.\Alph{factnum}, 2=factnum]{%
   \begin{mdframed}[style=claim, frametitle=#1]
