@@ -17,8 +17,7 @@
 \usepackage{../class}
 
 % ---- options ----
-\define@boolkey{connor}{pagebreak}[false]{}
-\define@boolkey{connor}{homework}[true]{}
+\define@boolkey{connor}{pagebreak}[true]{}
 \ProcessOptionsX<connor>\relax
 
 % ---- commands ----
@@ -110,19 +109,8 @@
   \newpage
   \fi
   \fi
-  \ifKV@connor@homework
   \section{#1}
   #2
-  \else
-  \begin{mdframed}[
-      topline=false,
-      rightline=false,
-      bottomline=false,
-      leftline=false,
-      frametitle=#1]
-    #2
-  \end{mdframed}
-  \fi
 }
 
 % ---- fact environment ----
