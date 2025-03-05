@@ -128,7 +128,7 @@
   backgroundcolor=byzantine!15!white,
   linecolor=byzantine!85!black
 }
-\newcommandx{\fact}[3][1=Fact \thesection.\Alph{factnum}, 2=factnum]{%
+\newcommandx{\fact}[3][1=Fact \thesection.\thefactnum, 2=factnum]{%
   \begin{mdframed}[style=fact, frametitle=#1]
     \stepcounter{#2}
     #3
