@@ -18,6 +18,7 @@
 
 % ---- options ----
 \define@boolkey{connor}{pagebreak}[false]{}
+\define@boolkey{connor}{homework}[true]{}
 \ProcessOptionsX<connor>\relax
 
 % ---- commands ----
@@ -109,8 +110,19 @@
   \newpage
   \fi
   \fi
+  \ifKV@connor@homework
   \section{#1}
   #2
+  \else
+  \begin{mdframed}[
+      topline=false,
+      rightline=false,
+      bottomline=false,
+      leftline=false,
+      #1]
+    #2
+  \end{mdframed}
+  \fi
 }
 
 % ---- fact environment ----
