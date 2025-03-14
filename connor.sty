@@ -15,12 +15,23 @@
 \RequirePackage{enumitem}
 \RequirePackage{tikz}
 \RequirePackage{xkeyval}
+\RequirePackage{hyperref}
 \usepackage{../class}
 
 % ---- options ----
 \define@boolkey{connor}{pagebreak}[true]{}
 \define@boolkey{connor}{homework}[true]{}
 \ProcessOptionsX<connor>\relax
+
+% ---- hyperref -----
+\hypersetup{%
+  colorlinks=true,
+  linkcolor=blue,
+  filecolor=magenta,
+  urlcolor=cyan,
+  pdftitle={Test},
+  pdfpagemode=FullScreen
+}
 
 % ---- commands ----
 \newcommand{\raisedS}{%
@@ -92,18 +103,16 @@
 }
 
 % boolean flag to see if the thing is completed or not
-\define@boolkey{connor}{completed}[false]{}
+
 
 \newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
-  \setkeys{connor}{completed=#3}
   \begin{mdframed}[style=claim, frametitle=#1]
+    \label{#1}
     \stepcounter{#2}
     #4
   \end{mdframed}
-  \ifKV@connor@completed
-  \else
-  \todo
-  \fi
+
+  % here we reference the position of the mdframed claim box so we may align the TODO margin note with the top of the claim
 }
 
 % -- proof --
