@@ -25,10 +25,13 @@
 \newcommand{\raisedS}{%
   \raisebox{\dimexpr(\fontcharht\font`X-\height+(\depth/2))/2\relax}{\S}
 }
+
 \newcommand{\centervert}[1]{
   \raisebox{\dimexpr(\fontcharht\font`X-\height+(\depth/2))/2\relax}{\,#1\,}
 }
+
 \newcommand{\qedsymbol}{$\triangle$}
+
 \newcommand{\intro}{%  
   \pagestyle{fancy}
   \fancyhf{}
@@ -48,6 +51,12 @@
     {\bf \@author}
   \end{center}
   \vspace{4mm}
+}
+
+\DeclareFontFamily{U}{stixbbit}{}
+\DeclareFontShape{U}{stixbbit}{m}{it}{<-> stix-mathbbit}{}
+\DeclareRobustCommand{\flag}{%
+  \rotatebox[origin=c]{-10}{{\usefont{U}{stixbbit}{m}{it}\symbol{"F6}}}
 }
 
 % ---- colors ----
