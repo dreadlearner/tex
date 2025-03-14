@@ -85,7 +85,6 @@
 \stepcounter{partnum}
 
 % -- section --
-
 \titleformat{\section}{%
   \normalfont\Large\bfseries
 }{%
@@ -104,6 +103,8 @@
 
 % boolean flag to see if the thing is completed or not
 % labeling works fine. what is left is to figure out a way to align the TODO boxes using the labeling and to have them disappear when we specify that it is "done"
+
+% also something is fucky with the marginpar
 
 \newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
   \refstepcounter{#2}
@@ -135,7 +136,7 @@
   #2
 }
 
-% ---- fact environment ----
+% ---- fact ----
 
 % -- counters --
 \newcounter{factnum}
@@ -158,7 +159,7 @@
   \end{mdframed}
 }
 
-% ---- notes ----
+% ---- note ----
 
 % -- note  --
 \mdfdefinestyle{note}{%
@@ -171,7 +172,7 @@
 }
 
 \newcommandx{\note}[2][1=Note:]{%
-  \marginpar[left]{%
+  \marginpar{%
     \begin{mdframed}[style=note, frametitle=#1]
       \tiny #2
     \end{mdframed}
@@ -179,7 +180,6 @@
 }
 
 % ---- todo ----
-
 
 % -- todo  --
 \mdfdefinestyle{todo}{%
@@ -190,6 +190,8 @@
   rightline=false,
   bottomline=false
 }
+
+\reversemarginpar
 
 \newcommandx{\todo}[2][1=TODO]{%
   \marginpar{%
