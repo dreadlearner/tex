@@ -55,9 +55,11 @@
 
 \DeclareFontFamily{U}{stixbbit}{}
 \DeclareFontShape{U}{stixbbit}{m}{it}{<-> stix-mathbbit}{}
-\DeclareRobustCommand{\flag}{%
+\DeclareRobustCommand{\danger}{%
   \rotatebox[origin=c]{-10}{{\usefont{U}{stixbbit}{m}{it}\symbol{"F6}}}
 }
+
+\newcommand{\flag}{\hfill\danger}
 
 % ---- colors ----
 \definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
