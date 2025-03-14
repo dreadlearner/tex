@@ -106,7 +106,7 @@
 
 \newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
   \begin{mdframed}[style=claim, frametitle=#1]
-    \stepcounter{#2}
+    \refstepcounter{#2}
     #4
   \end{mdframed}
 
@@ -125,7 +125,7 @@
 
 % -- exercise --
 \newcommandx{\exercise}[2][1=]{%
-  \stepcounter{exercisenum}
+  \refstepcounter{exercisenum}
   \ifnum \theexercisenum > 1
   \ifKV@connor@pagebreak
   \newpage
@@ -152,7 +152,7 @@
 }
 \newcommandx{\fact}[3][1=Fact \thesection.\thefactnum, 2=factnum]{%
   \begin{mdframed}[style=fact, frametitle=#1]
-    \stepcounter{#2}
+    \refstepcounter{#2}
     #3
   \end{mdframed}
 }
