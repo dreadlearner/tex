@@ -140,10 +140,10 @@
   \end{mdframed}
 }
 
-% ---- margin notes ----
+% ---- notes ----
 
-% -- marginpar --
-\mdfdefinestyle{margin}{%
+% -- note  --
+\mdfdefinestyle{note}{%
   backgroundcolor=oceanboatblue!15!white,
   linecolor=oceanboatblue!85!black,
   linewidth=2pt,
@@ -152,10 +152,10 @@
   bottomline=false
 }
 
-\renewcommand{\marginpar}[1]{%
+\newcommandx{\note}[2][1=Note:]{%
   \marginpar{%
-    \begin{mdframed}[style=margin]
-      \tiny #1
+    \begin{mdframed}[style=note, frametitle=#1]
+      \tiny #2
     \end{mdframed}
   }
 }
