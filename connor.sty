@@ -96,14 +96,14 @@
 
 \newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
   \setkeys{connor}{completed=#3}
-  \ifKV@connor@completed
-  \else
-  \todo
-  \fi
   \begin{mdframed}[style=claim, frametitle=#1]
     \stepcounter{#2}
     #4
   \end{mdframed}
+  \ifKV@connor@completed
+  \else
+  \todo
+  \fi
 }
 
 % -- proof --
@@ -152,8 +152,6 @@
 
 % ---- notes ----
 
-\reversemarginpar
-
 % -- note  --
 \mdfdefinestyle{note}{%
   backgroundcolor=oceanboatblue!15!white,
@@ -165,7 +163,7 @@
 }
 
 \newcommandx{\note}[2][1=Note:]{%
-  \marginpar{%
+  \marginpar[left text]{%
     \begin{mdframed}[style=note, frametitle=#1]
       \tiny #2
     \end{mdframed}
@@ -186,7 +184,7 @@
 }
 
 \newcommandx{\todo}[2][1=TODO]{%
-  \marginpar{%
+  \marginpar[right text]{%
     \begin{mdframed}[style=todo, frametitle=#1]
       \tiny #2
     \end{mdframed}
