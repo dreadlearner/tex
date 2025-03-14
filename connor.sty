@@ -19,6 +19,7 @@
 
 % ---- options ----
 \define@boolkey{connor}{pagebreak}[true]{}
+\define@boolkey{connor}{homework}[true]{}
 \ProcessOptionsX<connor>\relax
 
 % ---- commands ----
@@ -64,6 +65,8 @@
 
 % each exercise gets its own section. each part of a problem is labeled by "Claim S.X", where S is the section (exercise) number and X is the part, labeled alphabetically. maybe i need to add some support for more than twenty-six parts, but i think it is fine for now.
 
+% i want to implement some way of having these exercises be labeled "TODO" if they are not marked as "finished". for this i need to implement some boolean option that defaults to false and if-elses to produce the TODO label
+
 % -- counters --
 \newcounter{exercisenum}
 \newcounter{partnum}
@@ -71,8 +74,6 @@
 \stepcounter{partnum}
 
 % -- section --
-
-% i'm not sure i like the spacing between things in the section headers
 
 \titleformat{\section}{%
   \normalfont\Large\bfseries
@@ -89,10 +90,18 @@
   backgroundcolor=emerald!15!white,
   linecolor=emerald!85!black
 }
-\newcommandx{\claim}[3][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum]{%
+
+% boolean flag to see if the thing is completed or not
+\define@boolkey{connor}{completed}[false]{}
+
+\newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
+  \setkeys{connor}{completed=#3}
+  \ifKV@connor@completedfalse
+  \todo
+  \fi
   \begin{mdframed}[style=claim, frametitle=#1]
     \stepcounter{#2}
-    #3
+    #4
   \end{mdframed}
 }
 
@@ -157,6 +166,27 @@
 \newcommandx{\note}[2][1=Note:]{%
   \marginpar{%
     \begin{mdframed}[style=note, frametitle=#1]
+      \tiny #2
+    \end{mdframed}
+  }
+}
+
+% ---- todo ----
+
+
+% -- todo  --
+\mdfdefinestyle{todo}{%
+  backgroundcolor=bostonuniversityred!15!white,
+  linecolor=bostonuniversityred!85!black,
+  linewidth=2pt,
+  topline=false,
+  rightline=false,
+  bottomline=false
+}
+
+\newcommandx{\todo}[2][1=TODO]{%
+  \marginpar{%
+    \begin{mdframed}[style=todo, frametitle=#1]
       \tiny #2
     \end{mdframed}
   }
