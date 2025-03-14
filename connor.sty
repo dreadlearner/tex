@@ -152,9 +152,9 @@
   linecolor=byzantine!85!black
 }
 \newcommandx{\fact}[3][1=Fact \thesection.\thefactnum, 2=factnum]{%
+  \refstepcounter{#2}
+  \label{#1}
   \begin{mdframed}[style=fact, frametitle=#1]  
-    \refstepcounter{#2}
-    \label{#1}
     #3
   \end{mdframed}
 }
