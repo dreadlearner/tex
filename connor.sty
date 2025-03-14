@@ -103,6 +103,7 @@
 }
 
 % boolean flag to see if the thing is completed or not
+% labeling works fine. what is left is to figure out a way to align the TODO boxes using the labeling and to have them disappear when we specify that it is "done"
 
 \newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
   \refstepcounter{#2}
@@ -110,8 +111,6 @@
   \begin{mdframed}[style=claim, frametitle=#1]
     #4
   \end{mdframed}
-
-  % here we reference the position of the mdframed claim box so we may align the TODO margin note with the top of the claim
 }
 
 % -- proof --
@@ -172,7 +171,7 @@
 }
 
 \newcommandx{\note}[2][1=Note:]{%
-  \marginpar[left text]{%
+  \marginpar{%
     \begin{mdframed}[style=note, frametitle=#1]
       \tiny #2
     \end{mdframed}
@@ -193,7 +192,7 @@
 }
 
 \newcommandx{\todo}[2][1=TODO]{%
-  \marginpar[left text]{%
+  \marginpar{%
     \begin{mdframed}[style=todo, frametitle=#1]
       \tiny #2
     \end{mdframed}
