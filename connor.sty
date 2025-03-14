@@ -105,9 +105,9 @@
 % boolean flag to see if the thing is completed or not
 
 \newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
+  \refstepcounter{#2}
+  \label{#1}
   \begin{mdframed}[style=claim, frametitle=#1]
-    \refstepcounter{#2}
-    \label{#1}
     #4
   \end{mdframed}
 
@@ -152,7 +152,8 @@
   linecolor=byzantine!85!black
 }
 \newcommandx{\fact}[3][1=Fact \thesection.\thefactnum, 2=factnum]{%
-  \begin{mdframed}[style=fact, frametitle=#1]
+  \begin{mdframed}[style=fact, frametitle=#1]  
+    \label{#1}
     \refstepcounter{#2}
     #3
   \end{mdframed}
