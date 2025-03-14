@@ -139,3 +139,23 @@
     #3
   \end{mdframed}
 }
+
+% ---- margin notes ----
+
+% -- marginpar --
+\mfdefinestyle{margin}{%
+  backgroundcolor=oceanboatblue!15!white,
+  linecolor=oceanboatblue!85!black,
+  linewidth=2pt,
+  topline=false,
+  leftline=false,
+  bottomline=false
+}
+
+\renewcommand{\marginpar}[1]{%
+  \marginpar{%
+    \begin{mdframed}[style=margin]
+      \tiny #1
+    \end{mdframed}
+  }
+}
