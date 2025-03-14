@@ -96,7 +96,8 @@
 
 \newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
   \setkeys{connor}{completed=#3}
-  \ifKV@connor@completedfalse
+  \ifKV@connor@completed
+  \else
   \todo
   \fi
   \begin{mdframed}[style=claim, frametitle=#1]
