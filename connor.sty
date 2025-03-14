@@ -107,7 +107,7 @@
 
 \newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
   \begin{mdframed}[style=claim, frametitle=#1]
-    \label{#1}
+    \label{\mdf@frametitle}
     \stepcounter{#2}
     #4
   \end{mdframed}
