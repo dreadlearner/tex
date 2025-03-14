@@ -99,15 +99,14 @@
   bottomline=false,
   linewidth=2pt,
   backgroundcolor=emerald!15!white,
-  linecolor=emerald!85!black
+  linecolor=emerald!85!black,
+  startcode=[\label{\mdf@frametitle}]
 }
 
 % boolean flag to see if the thing is completed or not
 
-
 \newcommandx{\claim}[4][1=Claim \theexercisenum.\Alph{partnum}, 2=partnum, 3=false]{%
   \begin{mdframed}[style=claim, frametitle=#1]
-    \label{\mdf@frametitle}
     \stepcounter{#2}
     #4
   \end{mdframed}
@@ -150,7 +149,8 @@
   bottomline=false,
   linewidth=2pt,
   backgroundcolor=byzantine!15!white,
-  linecolor=byzantine!85!black
+  linecolor=byzantine!85!black,
+  startcode=[\label{\mdf@frametitle}]
 }
 \newcommandx{\fact}[3][1=Fact \thesection.\thefactnum, 2=factnum]{%
   \begin{mdframed}[style=fact, frametitle=#1]
@@ -168,7 +168,8 @@
   linewidth=2pt,
   topline=false,
   leftline=false,
-  bottomline=false
+  bottomline=false,
+  startcode=[\label{\mdf@frametitle}]
 }
 
 \newcommandx{\note}[2][1=Note:]{%
@@ -189,7 +190,8 @@
   linewidth=2pt,
   topline=false,
   rightline=false,
-  bottomline=false
+  bottomline=false,
+  startcode=[\label{\mdf@frametitle}]
 }
 
 \newcommandx{\todo}[2][1=TODO]{%
