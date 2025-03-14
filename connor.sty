@@ -16,7 +16,7 @@
 \RequirePackage{tikz}
 \RequirePackage{xkeyval}
 \RequirePackage{hyperref}
-\RequirePackage{marginnote}
+\RequirePackage{mparhack}
 \usepackage{../class}
 
 % ---- options ----
@@ -173,11 +173,12 @@
 
 \newcommandx{\note}[2][1=Note:]{%
   \reversemarginpar
-  \marginnote{%
+  \marginpar{%
     \begin{mdframed}[style=note, frametitle=#1]
       \tiny #2
     \end{mdframed}
   }
+  \reversemarginpar
 }
 
 % ---- todo ----
@@ -193,7 +194,7 @@
 }
 
 \newcommandx{\todo}[2][1=TODO]{%
-  \marginnote{%
+  \marginpar{%
     \begin{mdframed}[style=todo, frametitle=#1]
       \tiny #2
     \end{mdframed}
