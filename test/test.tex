@@ -1,24 +1,34 @@
 \documentclass[10pt]{article}
 \usepackage{../connor}
+\usepackage{class}
 
 \title{Test Assignment}
 
 \begin{document}
 \intro
 \exercise{Test exercise}{%
-  \claim{Hello, World!}
+  \marginpar{%
+    \vspace{7.275pt}
+    \begin{mdframed}[%
+        topline=false,
+        rightline=false,
+        bottomline=false,
+        linewidth=2pt,
+        backgroundcolor=bostonuniversityred!15!white,
+        linecolor=bostonuniversityred!85!black]
+      test
+  \end{mdframed}}
+  \claim{Hello, World! This line needs to be longer so I can see exactly how to vertically space my text. Maybe this is long enough?}
   \pf{I just said hello, what more do you want from me?}
   \claim{Hello again, World!}
   \sol{Ugh.}
 }
-
 \exercise{Markov's + Chebyshev's inequalities}{%
   \claim{Supppose that $X$ and $Y$ are discrete random variables on the same probability space, both with finite expectations $\mathds{E}[X]<\infty$, $\mathds{E}[Y]<\infty$. Prove that, if $X\leq Y$ as functions, then $\mathds{E}[X]\leq\mathds{E}[Y]$.
   }
   \pf{Let $X$ and $Y$ be discrete random variables on the same probability space $(\Omega,\mathds{P},\mathcal{F})$ and with finite expectation such that $X\leq Y$. Then for any $\omega\in\Omega$ we have that $X(\omega)\leq Y(\omega)$. Writing $X(\omega)=k_1$ and $Y(\omega)=k_2$, we can see that $\mathds{P}(X=k_1)=\mathds{P}(Y=k_2)$ for any pair of elements $k_1$ and $k_2$ with the same preimage. Then it is the case that $k_1\mathds{P}(X=k_1)\leq\mathds{P}(Y=k_2)$ for all of these pairs, and so we may sum across all $\omega$ to find that
     \[\mathds{E}[X]=\sum_{k\in\text{Im}(X)}k\mathds{P}(X=k)\leq\sum_{k\in\text{Im}(Y)}k\mathds{P}(Y=k)=\mathds{E}[Y].\]
   }
-
   \claim{Prove \textbf{Markov's inequality:} If $X$ is a nonnegative random variable, then for any $t>0$ we have
     \[\mathds{P}(X\geq t)\leq\frac{\mathds{E}[X]}{t}.\]
   }

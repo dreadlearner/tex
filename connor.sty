@@ -65,8 +65,24 @@
 }
 
 % -- math stuff --
-% \newcommand{\ker}[1]{\text{ker}\left(#1\right)}
+
+% - function stuff -
 \newcommand{\im}{\text{im}\,}
+
+% - mathds letters -
+\newcommand{\dsz}{\mathds{Z}}
+\newcommand{\dsq}{\mathds{Q}}
+\newcommand{\dsr}{\mathds{R}}
+\newcommand{\dsc}{\mathds{C}}
+\newcommand{\dsp}{\mathds{P}}
+
+% - mathcal letters -
+\newcommand{\calp}{\mathcal{P}}
+\newcommand{\caln}{\mathcal{N}}
+\newcommand{\calq}{\mathcal{Q}}
+
+% - probability -
+\newcommand{\var}{\text{Var}}
 
 % ---- colors ----
 \definecolor{bostonuniversityred}{rgb}{0.8, 0.0, 0.0}
@@ -118,7 +134,7 @@
 
 % -- proof --
 \newcommand{\pf}[1]{%
-  \emph{Proof. }#1\hfill\qedsymbol\bigbreak
+  \emph{Proof. }#1\hfill\qedsymbol
 }
 
 % -- solution --

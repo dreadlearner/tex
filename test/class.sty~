@@ -1,0 +1,5 @@
+\ProvidesPackage{class}
+\newcommand{\class}{}
+\newcommand{\prof}{}
+\newcommand{\sem}{}
+\newcommand{\uni}{}
