@@ -24,12 +24,15 @@
 \ProcessOptionsX<connor>\relax
 
 % ---- hyperref -----
+\makeatletter
+\let\usetitle\@titles
+\makeatother
 \hypersetup{%
   colorlinks=true,
   linkcolor=blue,
   filecolor=magenta,
   urlcolor=cyan,
-  pdftitle={\class - \@title}
+  pdftitle=\class - \usetitle
 }
 
 % ---- commands ----
