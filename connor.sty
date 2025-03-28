@@ -215,8 +215,7 @@
 }
 
 \newcommandx{\question}[2][1=Question \questionnum:]{%
-  \marginpar{%
-    \begin{mdframed}[style=question, frametitle=#1]
-      #2
-    \end{mdframed}
-  }
+  \begin{mdframed}[style=question, frametitle=#1]
+    #2
+  \end{mdframed}
+}
