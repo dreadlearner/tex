@@ -81,6 +81,7 @@
 \newcommand{\calp}{\mathcal{P}}
 \newcommand{\caln}{\mathcal{N}}
 \newcommand{\calq}{\mathcal{Q}}
+\newcommand{\calz}{\mathcal{Z}}
 
 % - probability -
 \newcommand{\var}{\text{Var}}
@@ -242,6 +243,11 @@
 % -- theorem --
 
 % -- lemma --
+\newcommandx{\corollary}[2][1=Lemma \thetheorem.]{%
+  \begin{mdframed}[style=statement, frametitle=#1]
+    #2
+  \end{mdframed}
+}
 
 % -- corollary --
 \newcommandx{\corollary}[2][1=Corollary \thecorollary.]{%
