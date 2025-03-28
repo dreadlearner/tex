@@ -197,3 +197,25 @@
     \end{mdframed}
   }
 }
+
+% ---- question -----
+
+% -- counter --
+\newcounterwithin{questionnum}{section}
+
+% -- question --
+\mdfdefinestyle{note}{%
+  backgroundcolor=oceanboatblue!15!white,
+  linecolor=oceanboatblue!85!black,
+  linewidth=2pt,
+  topline=false,
+  leftline=false,
+  bottomline=false
+}
+
+\newcommand{\question}[2][1=Question \questionnum:]{%
+  \marginpar{%
+    \begin{mdframed}[style=question, frametitle=#1]
+      #2
+    \end{mdframed}
+  }
